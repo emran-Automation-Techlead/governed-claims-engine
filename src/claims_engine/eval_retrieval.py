@@ -1,0 +1,224 @@
+r"""Labelled retrieval evaluation: BM25 (legacy / multilingual tokenizer) vs vector vs hybrid RRF.
+
+Run:  .venv\Scripts\python -m claims_engine.eval_retrieval [--no-semantic]
+Writes eval/results/retrieval_results.json and eval/RETRIEVAL_REPORT.md from MEASURED numbers only.
+Relevance is judged at clause level: a hit counts if its (document, clause_id) is in the case's
+`relevant` list; several chunks of one clause collapse to a single ranked item.
+Every case is scoped to one policy document (the realistic "user picked a policy" setting).
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import statistics
+import time
+from collections import defaultdict
+from collections.abc import Sequence
+from pathlib import Path
+
+from .bm25 import tokenize_legacy
+from .chunking import chunk_document
+from .config import PROJECT_ROOT
+from .embeddings import EmbeddingUnavailable, load_embedder
+from .ingestion import ingest_pdf_path
+from .retrieval import ChunkIndex, RetrievalConfig
+from .schemas import Chunk
+
+KS = (1, 3, 5)
+DEPTH = 10  # ranks examined per case
+
+
+def load_cases(path: Path) -> list[dict]:
+    cases = [json.loads(line) for line in path.read_text("utf-8").splitlines() if line.strip()]
+    ids = [c["id"] for c in cases]
+    if len(ids) != len(set(ids)):
+        raise ValueError("duplicate case ids")
+    return cases
+
+
+def clause_keys(chunks: Sequence[Chunk]) -> list[tuple[str, str | None]]:
+    """Ranked chunks -> ranked unique (filename, clause_id) items, first occurrence wins."""
+    seen: list[tuple[str, str | None]] = []
+    for c in chunks:
+        key = (c.filename, c.clause_id)
+        if key not in seen:
+            seen.append(key)
+    return seen
+
+
+def score_case(ranked: Sequence[tuple[str, str | None]], doc: str, relevant: Sequence[str]) -> dict:
+    rel = {(doc, r) for r in relevant}
+    first = next((i for i, k in enumerate(ranked, 1) if k in rel), None)
+    out: dict = {"first_rank": first, "rr": (1.0 / first) if first else 0.0}
+    for k in KS:
+        got = len(rel & set(ranked[:k]))
+        out[f"recall@{k}"] = got / len(rel)
+        out[f"hit@{k}"] = 1.0 if got else 0.0
+    return out
+
+
+def summarize(rows: Sequence[dict]) -> dict:
+    n = len(rows)
+    if n == 0:
+        return {"n": 0}
+    s: dict = {"n": n, "MRR": sum(r["rr"] for r in rows) / n}
+    for k in KS:
+        s[f"recall@{k}"] = sum(r[f"recall@{k}"] for r in rows) / n
+        s[f"hit@{k}"] = sum(r[f"hit@{k}"] for r in rows) / n
+    return s
+
+
+def build_corpus(policy_dir: Path) -> tuple[list[Chunk], dict[str, str]]:
+    chunks: list[Chunk] = []
+    ids: dict[str, str] = {}
+    for pdf in sorted(policy_dir.glob("*.pdf")):
+        doc = ingest_pdf_path(pdf)
+        ids[doc.filename] = doc.doc_id
+        chunks.extend(chunk_document(doc))
+    return chunks, ids
+
+
+def run_arm(name: str, index: ChunkIndex, method: str, cases: Sequence[dict],
+            ids: dict[str, str]) -> dict:
+    cfg = RetrievalConfig(method=method, top_k=DEPTH)
+    per_case: list[dict] = []
+    lat: list[float] = []
+    for c in cases:
+        scope = {ids[f] for f in c["scope"]}
+        t0 = time.perf_counter()
+        res = index.search(c["query"], cfg, doc_ids=scope)
+        lat.append((time.perf_counter() - t0) * 1000)
+        ranked = clause_keys([h.chunk for h in res.hits])
+        row = {"id": c["id"], "category": c["category"], "lang": c["lang"], "query": c["query"],
+               "top": [f"{k[1]}" for k in ranked[:5]],
+               "top1_score": res.hits[0].score if res.hits else None, "n_results": len(res.hits)}
+        if c["relevant"]:
+            row.update(score_case(ranked, c["scope"][0], c["relevant"]))
+            row["relevant"] = c["relevant"]
+        per_case.append(row)
+    answerable = [r for r in per_case if "rr" in r]
+    by_cat: dict[str, list[dict]] = defaultdict(list)
+    for r in answerable:
+        by_cat[r["category"]].append(r)
+    unans = [r for r in per_case if "rr" not in r]
+    return {
+        "arm": name, "method": method, "overall": summarize(answerable),
+        "by_category": {k: summarize(v) for k, v in sorted(by_cat.items())},
+        "failures_hit@5": [r for r in answerable if r["hit@5"] == 0.0],
+        "unanswerable": [{"id": r["id"], "query": r["query"], "n_results": r["n_results"],
+                          "top1_score": r["top1_score"]} for r in unans],
+        "answerable_top1_score_median": (statistics.median(
+            r["top1_score"] for r in answerable if r["top1_score"] is not None)
+            if any(r["top1_score"] is not None for r in answerable) else None),
+        "latency_ms_mean": statistics.fmean(lat), "latency_ms_p95": sorted(lat)[int(0.95 * (len(lat) - 1))],
+        "per_case": per_case,
+    }
+
+
+def _fmt(x: float | None) -> str:
+    return "-" if x is None else f"{x:.3f}"
+
+
+def render_report(res: dict) -> str:
+    L = ["# Retrieval evaluation report (generated - do not edit by hand)", "",
+         f"- Generated by `python -m claims_engine.eval_retrieval` on {res['date']}.",
+         f"- Corpus: {res['n_docs']} synthetic policies, {res['n_chunks']} chunks "
+         f"(corpus fingerprint `{res['corpus_fp']}`).",
+         f"- Cases: {res['n_cases']} ({res['n_answerable']} answerable, "
+         f"{res['n_cases'] - res['n_answerable']} unanswerable) from `eval/retrieval_cases.jsonl`.",
+         f"- Embedding model: {res['embedding'] or 'NOT RUN (semantic arms skipped)'}.",
+         "- Fusion: RRF k=60, depth=20; BM25 k1=1.5 b=0.75; metrics at clause level.",
+         f"- Deterministic re-run produced identical rankings: **{res['deterministic']}**.", "",
+         "## Overall (answerable cases)", "",
+         "| arm | n | Recall@1 | Recall@3 | Recall@5 | Hit@5 | MRR | mean ms/query |",
+         "|---|---|---|---|---|---|---|---|"]
+    for a in res["arms"]:
+        o = a["overall"]
+        L.append(f"| {a['arm']} | {o['n']} | {_fmt(o['recall@1'])} | {_fmt(o['recall@3'])} | "
+                 f"{_fmt(o['recall@5'])} | {_fmt(o['hit@5'])} | {_fmt(o['MRR'])} | "
+                 f"{a['latency_ms_mean']:.1f} |")
+    cats = sorted({c for a in res["arms"] for c in a["by_category"]})
+    L += ["", "## Recall@3 by category", "", "| category (n) | " + " | ".join(
+        a["arm"] for a in res["arms"]) + " |", "|---|" + "---|" * len(res["arms"])]
+    for c in cats:
+        n = next(a["by_category"][c]["n"] for a in res["arms"] if c in a["by_category"])
+        L.append(f"| {c} ({n}) | " + " | ".join(
+            _fmt(a["by_category"].get(c, {}).get("recall@3")) for a in res["arms"]) + " |")
+    L += ["", "## Failures (no relevant clause in top 5)", ""]
+    for a in res["arms"]:
+        L.append(f"**{a['arm']}** - {len(a['failures_hit@5'])} failure(s)")
+        for r in a["failures_hit@5"]:
+            L.append(f"- {r['id']} [{r['category']}/{r['lang']}] `{r['query']}` expected "
+                     f"{r['relevant']}, got top-5 {r['top']}")
+        L.append("")
+    L += ["## Unanswerable queries (nothing relevant exists)", "",
+          "| arm | results returned (of " + str(len(res['arms'][0]['unanswerable'])) +
+          ") | top-1 scores | median top-1 score on answerable |", "|---|---|---|---|"]
+    for a in res["arms"]:
+        scores = ", ".join(_fmt(u["top1_score"]) for u in a["unanswerable"])
+        returned = sum(1 for u in a["unanswerable"] if u["n_results"])
+        L.append(f"| {a['arm']} | {returned} | {scores} | {_fmt(a['answerable_top1_score_median'])} |")
+    L += ["", "## Limitations (read before citing any number)", ""] + [f"- {x}" for x in res["limitations"]]
+    return "\n".join(L) + "\n"
+
+
+LIMITATIONS = [
+    "Tiny, synthetic, author-written corpus (4 short policies) and author-written cases: results are "
+    "a regression/smoke benchmark, NOT evidence about real insurance documents or real users.",
+    "Cases are scoped to one document, so each ranker orders only 9-17 chunks; high Recall@5 is "
+    "easy here and will not transfer to large corpora.",
+    "Small n per category: differences of one case are large percentage swings. No significance tests.",
+    "Paraphrase and cross-lingual cases were written knowing the corpus; they may be easier or "
+    "harder than real claim narratives.",
+    "RRF parameters (k=60, depth=20) are defaults, not tuned; no tuning was done on these cases.",
+    "Latency is CPU-only, single process, warm model, on one developer machine.",
+    "Unanswerable queries show scores only; no abstention threshold is derived or validated yet.",
+]
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--no-semantic", action="store_true")
+    ap.add_argument("--policies", type=Path, default=PROJECT_ROOT / "data" / "policies")
+    ap.add_argument("--cases", type=Path, default=PROJECT_ROOT / "eval" / "retrieval_cases.jsonl")
+    ap.add_argument("--out", type=Path, default=PROJECT_ROOT / "eval")
+    a = ap.parse_args()
+
+    cases = load_cases(a.cases)
+    chunks, ids = build_corpus(a.policies)
+    embedder, embedding = None, None
+    if not a.no_semantic:
+        try:
+            embedder = load_embedder()
+            embedding = f"{embedder.model_id} @ {embedder.revision}"
+        except EmbeddingUnavailable as exc:
+            print(f"semantic arms skipped: {exc}")
+    lexical = ChunkIndex(chunks)
+    legacy = ChunkIndex(chunks, analyzer=tokenize_legacy)
+    full = ChunkIndex(chunks, embedder=embedder)
+
+    def arms() -> list[dict]:
+        out = [run_arm("bm25 (M1 ascii tokenizer)", legacy, "bm25", cases, ids),
+               run_arm("bm25 (multilingual)", lexical, "bm25", cases, ids)]
+        if embedder is not None:
+            out += [run_arm("vector", full, "vector", cases, ids),
+                    run_arm("hybrid RRF", full, "hybrid_rrf", cases, ids)]
+        return out
+
+    first, second = arms(), arms()
+    strip = lambda arm_list: [[(r["id"], r["top"]) for r in x["per_case"]] for x in arm_list]
+    result = {
+        "date": time.strftime("%Y-%m-%d"), "n_docs": len(ids), "n_chunks": len(chunks),
+        "corpus_fp": lexical.corpus_fp, "n_cases": len(cases),
+        "n_answerable": sum(1 for c in cases if c["relevant"]), "embedding": embedding,
+        "deterministic": strip(first) == strip(second), "arms": second, "limitations": LIMITATIONS,
+    }
+    (a.out / "results").mkdir(parents=True, exist_ok=True)
+    (a.out / "results" / "retrieval_results.json").write_text(
+        json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8", newline="\n")
+    (a.out / "RETRIEVAL_REPORT.md").write_text(render_report(result), encoding="utf-8", newline="\n")
+    print(render_report(result))
+
+
+if __name__ == "__main__":
+    main()

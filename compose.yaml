@@ -1,0 +1,43 @@
+# Local run of the demo image. Published to LOOPBACK ONLY: the app has no authentication.
+# NOT TESTED locally (Docker daemon was not running when this was written).
+services:
+  demo:
+    build:
+      context: .
+      target: runtime            # lexical-only; no model needed
+    image: claims-demo:local
+    ports:
+      - "127.0.0.1:7860:7860"
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 256
+    mem_limit: 1g
+    cpus: 1.0
+    restart: "no"
+    # No secrets, no environment credentials, no volumes: all data inside the image is synthetic.
+
+  demo-semantic:                  # optional:  docker compose --profile semantic up demo-semantic
+    profiles: ["semantic"]
+    build:
+      context: .
+      target: semantic
+    image: claims-demo:semantic
+    command: ["--host", "0.0.0.0", "--port", "7860", "--semantic"]
+    ports:
+      - "127.0.0.1:7861:7860"
+    volumes:
+      - ./models:/app/models:ro   # fetched out-of-band with `python -m claims_engine.fetch_model`; never at build/start
+    read_only: true
+    tmpfs:
+      - /tmp:size=256m,mode=1777
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 256
+    mem_limit: 3g
+    cpus: 2.0
+    restart: "no"

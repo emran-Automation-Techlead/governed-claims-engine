@@ -1,0 +1,6 @@
+-r requirements.txt
+pytest==9.0.3
+ruff==0.17.1
+mypy==1.8.0
+reportlab==5.0.0   # only for generating the synthetic policy PDFs
+PyYAML==6.0.3          # used by tests that parse the CI / compose files

@@ -1,0 +1,5932 @@
+{
+  "date": "2026-10-27",
+  "n_docs": 4,
+  "n_chunks": 48,
+  "corpus_fp": "ee4866d6f3ca020e",
+  "n_cases": 52,
+  "n_answerable": 49,
+  "embedding": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 @ e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+  "deterministic": true,
+  "arms": [
+    {
+      "arm": "bm25 (M1 ascii tokenizer)",
+      "method": "bm25",
+      "overall": {
+        "n": 49,
+        "MRR": 0.792063492063492,
+        "recall@1": 0.7040816326530612,
+        "hit@1": 0.7551020408163265,
+        "recall@3": 0.7959183673469388,
+        "hit@3": 0.8163265306122449,
+        "recall@5": 0.8163265306122449,
+        "hit@5": 0.8367346938775511
+      },
+      "by_category": {
+        "cross_lingual": {
+          "n": 5,
+          "MRR": 0.2,
+          "recall@1": 0.2,
+          "hit@1": 0.2,
+          "recall@3": 0.2,
+          "hit@3": 0.2,
+          "recall@5": 0.2,
+          "hit@5": 0.2
+        },
+        "exact_id": {
+          "n": 6,
+          "MRR": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0
+        },
+        "lexical": {
+          "n": 10,
+          "MRR": 1.0,
+          "recall@1": 0.95,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0
+        },
+        "multilingual": {
+          "n": 16,
+          "MRR": 0.90625,
+          "recall@1": 0.8125,
+          "hit@1": 0.875,
+          "recall@3": 0.9375,
+          "hit@3": 0.9375,
+          "recall@5": 0.9375,
+          "hit@5": 0.9375
+        },
+        "paraphrase": {
+          "n": 12,
+          "MRR": 0.6092592592592593,
+          "recall@1": 0.4166666666666667,
+          "hit@1": 0.5,
+          "recall@3": 0.5833333333333334,
+          "hit@3": 0.6666666666666666,
+          "recall@5": 0.6666666666666666,
+          "hit@5": 0.75
+        }
+      },
+      "failures_hit@5": [
+        {
+          "id": "Q18",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "slow drip behind the wall over many months",
+          "top": [
+            "1.1",
+            "3.3",
+            "3.1",
+            "5.1",
+            "4.4"
+          ],
+          "top1_score": 2.0411132003889425,
+          "n_results": 9,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q22",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "hurricane tore off the roof tiles",
+          "top": [
+            "1.1",
+            "3.3",
+            "3.1",
+            "5.1",
+            "4.4"
+          ],
+          "top1_score": 2.0411132003889425,
+          "n_results": 9,
+          "first_rank": 9,
+          "rr": 0.1111111111111111,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q24",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "I was drunk when I got injured",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "4.4"
+          ]
+        },
+        {
+          "id": "Q41",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Verschleiss",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "3.1"
+          ]
+        },
+        {
+          "id": "Q45",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "pipe burst water damage",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "1.2",
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q47",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "deductible",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "1.3"
+          ]
+        },
+        {
+          "id": "Q48",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "intentional damage",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q49",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "lightning fire",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "2.1"
+          ]
+        }
+      ],
+      "unanswerable": [
+        {
+          "id": "Q50",
+          "query": "earthquake coverage in Japan",
+          "n_results": 3,
+          "top1_score": 1.9645218388566243
+        },
+        {
+          "id": "Q51",
+          "query": "pet insurance dog bite",
+          "n_results": 0,
+          "top1_score": null
+        },
+        {
+          "id": "Q52",
+          "query": "cyber attack ransomware",
+          "n_results": 0,
+          "top1_score": null
+        }
+      ],
+      "answerable_top1_score_median": 5.9638289488443,
+      "latency_ms_mean": 0.4728307696775748,
+      "latency_ms_p95": 0.9717000066302717,
+      "per_case": [
+        {
+          "id": "Q01",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "clause 4.3",
+          "top": [
+            "4.3"
+          ],
+          "top1_score": 2.6198514312483483,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.3"
+          ]
+        },
+        {
+          "id": "Q02",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "what does 3.2 say",
+          "top": [
+            "3.2"
+          ],
+          "top1_score": 2.247197817494446,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q03",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "5.4",
+          "top": [
+            "5.4"
+          ],
+          "top1_score": 3.7068833341168737,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "5.4"
+          ]
+        },
+        {
+          "id": "Q04",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "section 2.3",
+          "top": [
+            "2.3"
+          ],
+          "top1_score": 2.3554059718897644,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q05",
+          "category": "exact_id",
+          "lang": "fr",
+          "query": "article 3.2",
+          "top": [
+            "3.2"
+          ],
+          "top1_score": 2.3554059718897644,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q06",
+          "category": "exact_id",
+          "lang": "de",
+          "query": "Ziffer 3.2",
+          "top": [
+            "3.2"
+          ],
+          "top1_score": 2.606416858070801,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q07",
+          "category": "lexical",
+          "lang": "en",
+          "query": "excess amount per claim",
+          "top": [
+            "5.3",
+            "1.3"
+          ],
+          "top1_score": 8.365287058297422,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "5.3"
+          ]
+        },
+        {
+          "id": "Q08",
+          "category": "lexical",
+          "lang": "en",
+          "query": "war and terrorism",
+          "top": [
+            "4.1",
+            "4.2",
+            "1.2",
+            "3.1",
+            "5.2"
+          ],
+          "top1_score": 9.914480929078286,
+          "n_results": 7,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.1"
+          ]
+        },
+        {
+          "id": "Q09",
+          "category": "lexical",
+          "lang": "en",
+          "query": "baggage limit single item",
+          "top": [
+            "4.1",
+            "4.2",
+            "4.4",
+            "4.3"
+          ],
+          "top1_score": 9.495698508565567,
+          "n_results": 4,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.1"
+          ]
+        },
+        {
+          "id": "Q10",
+          "category": "lexical",
+          "lang": "en",
+          "query": "flood extension schedule",
+          "top": [
+            "3.3",
+            "1.1"
+          ],
+          "top1_score": 10.346522767879886,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q11",
+          "category": "lexical",
+          "lang": "en",
+          "query": "notify within 30 days",
+          "top": [
+            "5.1",
+            "4.3"
+          ],
+          "top1_score": 15.102389116234828,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "5.1"
+          ]
+        },
+        {
+          "id": "Q12",
+          "category": "lexical",
+          "lang": "en",
+          "query": "delay compensation hours departure",
+          "top": [
+            "3.2",
+            "3.3",
+            "3.1"
+          ],
+          "top1_score": 10.956776862851596,
+          "n_results": 3,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q13",
+          "category": "lexical",
+          "lang": "en",
+          "query": "hazardous activities skydiving extension",
+          "top": [
+            "4.3"
+          ],
+          "top1_score": 16.177091605124446,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.3"
+          ]
+        },
+        {
+          "id": "Q14",
+          "category": "lexical",
+          "lang": "en",
+          "query": "police report theft",
+          "top": [
+            "5.2",
+            "2.3",
+            "4.3"
+          ],
+          "top1_score": 11.082554130693588,
+          "n_results": 3,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "5.2"
+          ]
+        },
+        {
+          "id": "Q15",
+          "category": "lexical",
+          "lang": "en",
+          "query": "repatriation cost returning home",
+          "top": [
+            "2.2"
+          ],
+          "top1_score": 11.609873791784484,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q16",
+          "category": "lexical",
+          "lang": "en",
+          "query": "pre-existing condition declared in writing",
+          "top": [
+            "2.3",
+            "1.2",
+            "1.3",
+            "4.2",
+            "4.1"
+          ],
+          "top1_score": 11.541542397098972,
+          "n_results": 5,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3",
+            "1.2"
+          ]
+        },
+        {
+          "id": "Q17",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "my kitchen pipe suddenly burst and flooded the floor",
+          "top": [
+            "3.1",
+            "2.1",
+            "1.1",
+            "4.3",
+            "4.2"
+          ],
+          "top1_score": 8.79170738403879,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.1"
+          ]
+        },
+        {
+          "id": "Q18",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "slow drip behind the wall over many months",
+          "top": [
+            "1.1",
+            "3.3",
+            "3.1",
+            "5.1",
+            "4.4"
+          ],
+          "top1_score": 2.0411132003889425,
+          "n_results": 9,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q19",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "nobody lived in the house for three months and it was burgled",
+          "top": [
+            "4.3",
+            "1.1",
+            "5.2",
+            "5.4",
+            "3.3"
+          ],
+          "top1_score": 4.657435401751185,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 0.5,
+          "hit@3": 1.0,
+          "recall@5": 0.5,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.3",
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q20",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "I broke the vase on purpose",
+          "top": [
+            "1.1",
+            "3.3",
+            "3.1",
+            "5.1",
+            "4.4"
+          ],
+          "top1_score": 2.0411132003889425,
+          "n_results": 9,
+          "first_rank": 5,
+          "rr": 0.2,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.4"
+          ]
+        },
+        {
+          "id": "Q21",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "burglars got in but there is no sign of a break-in",
+          "top": [
+            "2.3",
+            "3.3",
+            "1.2",
+            "4.3",
+            "1.3"
+          ],
+          "top1_score": 6.815476202048708,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q22",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "hurricane tore off the roof tiles",
+          "top": [
+            "1.1",
+            "3.3",
+            "3.1",
+            "5.1",
+            "4.4"
+          ],
+          "top1_score": 2.0411132003889425,
+          "n_results": 9,
+          "first_rank": 9,
+          "rr": 0.1111111111111111,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q23",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "my suitcase was stolen from a bench while I went to the toilet",
+          "top": [
+            "4.4",
+            "4.1",
+            "1.1",
+            "3.3",
+            "3.2"
+          ],
+          "top1_score": 4.805951034377049,
+          "n_results": 10,
+          "first_rank": 2,
+          "rr": 0.5,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.5,
+          "hit@3": 1.0,
+          "recall@5": 0.5,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.2",
+            "4.1"
+          ]
+        },
+        {
+          "id": "Q24",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "I was drunk when I got injured",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "4.4"
+          ]
+        },
+        {
+          "id": "Q25",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "cancelled my trip because I simply changed my mind",
+          "top": [
+            "3.3",
+            "1.1",
+            "2.3",
+            "3.1"
+          ],
+          "top1_score": 3.6131206079421267,
+          "n_results": 4,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q26",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "ski racing as a job",
+          "top": [
+            "4.3",
+            "1.1",
+            "3.3",
+            "4.2",
+            "3.1"
+          ],
+          "top1_score": 4.349130490413205,
+          "n_results": 6,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.3"
+          ]
+        },
+        {
+          "id": "Q27",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "my flight left 10 hours late, what do I get",
+          "top": [
+            "4.2",
+            "3.2",
+            "4.4"
+          ],
+          "top1_score": 5.706587482197055,
+          "n_results": 3,
+          "first_rank": 2,
+          "rr": 0.5,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q28",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "an illness I already had before buying the policy",
+          "top": [
+            "1.2",
+            "2.3",
+            "3.1",
+            "1.3",
+            "4.4"
+          ],
+          "top1_score": 10.433986968742616,
+          "n_results": 7,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3",
+            "1.2"
+          ]
+        },
+        {
+          "id": "Q29",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "franchise après sinistre",
+          "top": [
+            "1.3",
+            "1.1",
+            "3.3",
+            "2.1"
+          ],
+          "top1_score": 12.41682894625552,
+          "n_results": 4,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.3"
+          ]
+        },
+        {
+          "id": "Q30",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "vol sans effraction",
+          "top": [
+            "2.3",
+            "3.2"
+          ],
+          "top1_score": 8.51697801712424,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q31",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "dégât des eaux canalisation",
+          "top": [
+            "2.2",
+            "1.2",
+            "1.3",
+            "1.1",
+            "2.3"
+          ],
+          "top1_score": 15.154524074254764,
+          "n_results": 5,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.2",
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q32",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "logement inoccupé 60 jours",
+          "top": [
+            "3.2",
+            "1.2"
+          ],
+          "top1_score": 12.416828946255519,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q33",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "usure et humidité progressive",
+          "top": [
+            "3.1",
+            "1.2"
+          ],
+          "top1_score": 15.779053726531169,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.1"
+          ]
+        },
+        {
+          "id": "Q34",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "dommages causés volontairement",
+          "top": [
+            "3.3",
+            "2.1",
+            "1.3",
+            "2.2"
+          ],
+          "top1_score": 12.482608857680622,
+          "n_results": 4,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q35",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "degat des eaux",
+          "top": [
+            "1.2",
+            "2.2"
+          ],
+          "top1_score": 5.239702862496697,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.2",
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q36",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "foudre",
+          "top": [
+            "2.1"
+          ],
+          "top1_score": 3.6131206079421267,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.1"
+          ]
+        },
+        {
+          "id": "Q37",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Leitungswasserschaden",
+          "top": [
+            "1.2"
+          ],
+          "top1_score": 3.439139879788418,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.2"
+          ]
+        },
+        {
+          "id": "Q38",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Wasserschaden durch Rohrbruch",
+          "top": [
+            "2.2",
+            "2.1"
+          ],
+          "top1_score": 5.814415138296434,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q39",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Leerstand mehr als 60 Tage",
+          "top": [
+            "3.2"
+          ],
+          "top1_score": 15.790034093014476,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q40",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Schimmel Rost",
+          "top": [
+            "3.1"
+          ],
+          "top1_score": 7.611284226092332,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.1"
+          ]
+        },
+        {
+          "id": "Q41",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Verschleiss",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "3.1"
+          ]
+        },
+        {
+          "id": "Q42",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Schäden absichtlich verursacht",
+          "top": [
+            "2.1",
+            "3.3",
+            "2.2",
+            "1.3"
+          ],
+          "top1_score": 5.9638289488443,
+          "n_results": 4,
+          "first_rank": 2,
+          "rr": 0.5,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q43",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Selbstbehalt",
+          "top": [
+            "1.3"
+          ],
+          "top1_score": 3.9098071889402264,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.3"
+          ]
+        },
+        {
+          "id": "Q44",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Einbruchspuren",
+          "top": [
+            "2.3"
+          ],
+          "top1_score": 4.390500666171724,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q45",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "pipe burst water damage",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "1.2",
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q46",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "empty house more than 60 days theft",
+          "top": [
+            "3.2"
+          ],
+          "top1_score": 2.8807471313099025,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q47",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "deductible",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "1.3"
+          ]
+        },
+        {
+          "id": "Q48",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "intentional damage",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q49",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "lightning fire",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "2.1"
+          ]
+        },
+        {
+          "id": "Q50",
+          "category": "unanswerable",
+          "lang": "en",
+          "query": "earthquake coverage in Japan",
+          "top": [
+            "1.1",
+            "3.3",
+            "1.2"
+          ],
+          "top1_score": 1.9645218388566243,
+          "n_results": 3
+        },
+        {
+          "id": "Q51",
+          "category": "unanswerable",
+          "lang": "en",
+          "query": "pet insurance dog bite",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0
+        },
+        {
+          "id": "Q52",
+          "category": "unanswerable",
+          "lang": "en",
+          "query": "cyber attack ransomware",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0
+        }
+      ]
+    },
+    {
+      "arm": "bm25 (multilingual)",
+      "method": "bm25",
+      "overall": {
+        "n": 49,
+        "MRR": 0.8229591836734694,
+        "recall@1": 0.7448979591836735,
+        "hit@1": 0.7959183673469388,
+        "recall@3": 0.8163265306122449,
+        "hit@3": 0.8367346938775511,
+        "recall@5": 0.8367346938775511,
+        "hit@5": 0.8571428571428571
+      },
+      "by_category": {
+        "cross_lingual": {
+          "n": 5,
+          "MRR": 0.2,
+          "recall@1": 0.2,
+          "hit@1": 0.2,
+          "recall@3": 0.2,
+          "hit@3": 0.2,
+          "recall@5": 0.2,
+          "hit@5": 0.2
+        },
+        "exact_id": {
+          "n": 6,
+          "MRR": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0
+        },
+        "lexical": {
+          "n": 10,
+          "MRR": 1.0,
+          "recall@1": 0.95,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0
+        },
+        "multilingual": {
+          "n": 16,
+          "MRR": 1.0,
+          "recall@1": 0.9375,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0
+        },
+        "paraphrase": {
+          "n": 12,
+          "MRR": 0.6104166666666667,
+          "recall@1": 0.4166666666666667,
+          "hit@1": 0.5,
+          "recall@3": 0.5833333333333334,
+          "hit@3": 0.6666666666666666,
+          "recall@5": 0.6666666666666666,
+          "hit@5": 0.75
+        }
+      },
+      "failures_hit@5": [
+        {
+          "id": "Q18",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "slow drip behind the wall over many months",
+          "top": [
+            "1.1",
+            "3.3",
+            "3.1",
+            "5.1",
+            "4.4"
+          ],
+          "top1_score": 2.019769244840778,
+          "n_results": 9,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q22",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "hurricane tore off the roof tiles",
+          "top": [
+            "1.1",
+            "3.3",
+            "3.1",
+            "5.1",
+            "4.4"
+          ],
+          "top1_score": 2.019769244840778,
+          "n_results": 9,
+          "first_rank": 8,
+          "rr": 0.125,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q24",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "I was drunk when I got injured",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "4.4"
+          ]
+        },
+        {
+          "id": "Q45",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "pipe burst water damage",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "1.2",
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q47",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "deductible",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "1.3"
+          ]
+        },
+        {
+          "id": "Q48",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "intentional damage",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q49",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "lightning fire",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "2.1"
+          ]
+        }
+      ],
+      "unanswerable": [
+        {
+          "id": "Q50",
+          "query": "earthquake coverage in Japan",
+          "n_results": 3,
+          "top1_score": 1.9259104872353399
+        },
+        {
+          "id": "Q51",
+          "query": "pet insurance dog bite",
+          "n_results": 0,
+          "top1_score": null
+        },
+        {
+          "id": "Q52",
+          "query": "cyber attack ransomware",
+          "n_results": 0,
+          "top1_score": null
+        }
+      ],
+      "answerable_top1_score_median": 6.445450364680469,
+      "latency_ms_mean": 1.0046326916870805,
+      "latency_ms_p95": 2.1533999824896455,
+      "per_case": [
+        {
+          "id": "Q01",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "clause 4.3",
+          "top": [
+            "4.3"
+          ],
+          "top1_score": 2.551017243697306,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.3"
+          ]
+        },
+        {
+          "id": "Q02",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "what does 3.2 say",
+          "top": [
+            "3.2"
+          ],
+          "top1_score": 2.0931795278284158,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q03",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "5.4",
+          "top": [
+            "5.4"
+          ],
+          "top1_score": 3.62806993106734,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "5.4"
+          ]
+        },
+        {
+          "id": "Q04",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "section 2.3",
+          "top": [
+            "2.3"
+          ],
+          "top1_score": 2.1918810020435417,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q05",
+          "category": "exact_id",
+          "lang": "fr",
+          "query": "article 3.2",
+          "top": [
+            "3.2"
+          ],
+          "top1_score": 2.3587147237002295,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q06",
+          "category": "exact_id",
+          "lang": "de",
+          "query": "Ziffer 3.2",
+          "top": [
+            "3.2"
+          ],
+          "top1_score": 2.6251281521958174,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q07",
+          "category": "lexical",
+          "lang": "en",
+          "query": "excess amount per claim",
+          "top": [
+            "5.3",
+            "1.3"
+          ],
+          "top1_score": 8.219934200284865,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "5.3"
+          ]
+        },
+        {
+          "id": "Q08",
+          "category": "lexical",
+          "lang": "en",
+          "query": "war and terrorism",
+          "top": [
+            "4.1",
+            "4.2",
+            "1.2",
+            "3.1",
+            "5.2"
+          ],
+          "top1_score": 9.728764866832464,
+          "n_results": 7,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.1"
+          ]
+        },
+        {
+          "id": "Q09",
+          "category": "lexical",
+          "lang": "en",
+          "query": "baggage limit single item",
+          "top": [
+            "4.1",
+            "4.2",
+            "4.4",
+            "4.3"
+          ],
+          "top1_score": 9.275832637825847,
+          "n_results": 4,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.1"
+          ]
+        },
+        {
+          "id": "Q10",
+          "category": "lexical",
+          "lang": "en",
+          "query": "flood extension schedule",
+          "top": [
+            "3.3",
+            "1.1"
+          ],
+          "top1_score": 10.132431707706665,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q11",
+          "category": "lexical",
+          "lang": "en",
+          "query": "notify within 30 days",
+          "top": [
+            "5.1",
+            "4.3"
+          ],
+          "top1_score": 14.81875477040781,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "5.1"
+          ]
+        },
+        {
+          "id": "Q12",
+          "category": "lexical",
+          "lang": "en",
+          "query": "delay compensation hours departure",
+          "top": [
+            "3.2",
+            "3.3",
+            "3.1"
+          ],
+          "top1_score": 10.856697474926214,
+          "n_results": 3,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q13",
+          "category": "lexical",
+          "lang": "en",
+          "query": "hazardous activities skydiving extension",
+          "top": [
+            "4.3"
+          ],
+          "top1_score": 16.14929564032676,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.3"
+          ]
+        },
+        {
+          "id": "Q14",
+          "category": "lexical",
+          "lang": "en",
+          "query": "police report theft",
+          "top": [
+            "5.2",
+            "2.3",
+            "4.3"
+          ],
+          "top1_score": 11.199856797770105,
+          "n_results": 3,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "5.2"
+          ]
+        },
+        {
+          "id": "Q15",
+          "category": "lexical",
+          "lang": "en",
+          "query": "repatriation cost returning home",
+          "top": [
+            "2.2"
+          ],
+          "top1_score": 11.324086202926601,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q16",
+          "category": "lexical",
+          "lang": "en",
+          "query": "pre-existing condition declared in writing",
+          "top": [
+            "2.3",
+            "1.2",
+            "1.3",
+            "4.2",
+            "4.1"
+          ],
+          "top1_score": 16.2031716994045,
+          "n_results": 5,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3",
+            "1.2"
+          ]
+        },
+        {
+          "id": "Q17",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "my kitchen pipe suddenly burst and flooded the floor",
+          "top": [
+            "3.1",
+            "1.1",
+            "2.1",
+            "4.3",
+            "4.2"
+          ],
+          "top1_score": 8.571604707285907,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.1"
+          ]
+        },
+        {
+          "id": "Q18",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "slow drip behind the wall over many months",
+          "top": [
+            "1.1",
+            "3.3",
+            "3.1",
+            "5.1",
+            "4.4"
+          ],
+          "top1_score": 2.019769244840778,
+          "n_results": 9,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q19",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "nobody lived in the house for three months and it was burgled",
+          "top": [
+            "4.3",
+            "1.1",
+            "5.2",
+            "5.4",
+            "3.3"
+          ],
+          "top1_score": 4.552715518874841,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 0.5,
+          "hit@3": 1.0,
+          "recall@5": 0.5,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.3",
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q20",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "I broke the vase on purpose",
+          "top": [
+            "1.1",
+            "3.3",
+            "3.1",
+            "5.1",
+            "4.4"
+          ],
+          "top1_score": 2.019769244840778,
+          "n_results": 9,
+          "first_rank": 5,
+          "rr": 0.2,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.4"
+          ]
+        },
+        {
+          "id": "Q21",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "burglars got in but there is no sign of a break-in",
+          "top": [
+            "2.3",
+            "3.3",
+            "1.2",
+            "4.3",
+            "1.1"
+          ],
+          "top1_score": 6.665521177270963,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q22",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "hurricane tore off the roof tiles",
+          "top": [
+            "1.1",
+            "3.3",
+            "3.1",
+            "5.1",
+            "4.4"
+          ],
+          "top1_score": 2.019769244840778,
+          "n_results": 9,
+          "first_rank": 8,
+          "rr": 0.125,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q23",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "my suitcase was stolen from a bench while I went to the toilet",
+          "top": [
+            "4.4",
+            "4.1",
+            "2.3",
+            "3.2",
+            "1.1"
+          ],
+          "top1_score": 4.700209852825566,
+          "n_results": 10,
+          "first_rank": 2,
+          "rr": 0.5,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.5,
+          "hit@3": 1.0,
+          "recall@5": 0.5,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.2",
+            "4.1"
+          ]
+        },
+        {
+          "id": "Q24",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "I was drunk when I got injured",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "4.4"
+          ]
+        },
+        {
+          "id": "Q25",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "cancelled my trip because I simply changed my mind",
+          "top": [
+            "3.3",
+            "1.1",
+            "2.3",
+            "3.1"
+          ],
+          "top1_score": 3.62806993106734,
+          "n_results": 4,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q26",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "ski racing as a job",
+          "top": [
+            "4.3"
+          ],
+          "top1_score": 2.7314526717293814,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.3"
+          ]
+        },
+        {
+          "id": "Q27",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "my flight left 10 hours late, what do I get",
+          "top": [
+            "4.2",
+            "3.2",
+            "4.4"
+          ],
+          "top1_score": 5.730198545726498,
+          "n_results": 3,
+          "first_rank": 2,
+          "rr": 0.5,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q28",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "an illness I already had before buying the policy",
+          "top": [
+            "1.2",
+            "2.3",
+            "3.1",
+            "1.3",
+            "4.4"
+          ],
+          "top1_score": 9.739964035849903,
+          "n_results": 7,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3",
+            "1.2"
+          ]
+        },
+        {
+          "id": "Q29",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "franchise après sinistre",
+          "top": [
+            "1.3",
+            "1.1"
+          ],
+          "top1_score": 10.636920468869128,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.3"
+          ]
+        },
+        {
+          "id": "Q30",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "vol sans effraction",
+          "top": [
+            "2.3",
+            "3.2"
+          ],
+          "top1_score": 8.792185404696088,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q31",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "dégât des eaux canalisation",
+          "top": [
+            "2.2",
+            "1.2"
+          ],
+          "top1_score": 10.88162381863417,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.2",
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q32",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "logement inoccupé 60 jours",
+          "top": [
+            "3.2",
+            "1.2"
+          ],
+          "top1_score": 12.43427146179062,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q33",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "usure et humidité progressive",
+          "top": [
+            "3.1",
+            "1.2"
+          ],
+          "top1_score": 16.261696189977435,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.1"
+          ]
+        },
+        {
+          "id": "Q34",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "dommages causés volontairement",
+          "top": [
+            "3.3",
+            "2.1",
+            "2.2"
+          ],
+          "top1_score": 10.00574193634012,
+          "n_results": 3,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q35",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "degat des eaux",
+          "top": [
+            "1.2",
+            "2.2"
+          ],
+          "top1_score": 8.818066712415126,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.2",
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q36",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "foudre",
+          "top": [
+            "2.1"
+          ],
+          "top1_score": 3.7277028984706257,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.1"
+          ]
+        },
+        {
+          "id": "Q37",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Leitungswasserschaden",
+          "top": [
+            "1.2"
+          ],
+          "top1_score": 3.443971004630376,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.2"
+          ]
+        },
+        {
+          "id": "Q38",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Wasserschaden durch Rohrbruch",
+          "top": [
+            "2.2",
+            "2.1"
+          ],
+          "top1_score": 6.225379552089975,
+          "n_results": 2,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q39",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Leerstand mehr als 60 Tage",
+          "top": [
+            "3.2"
+          ],
+          "top1_score": 15.891772468167591,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q40",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Schimmel Rost",
+          "top": [
+            "3.1"
+          ],
+          "top1_score": 7.888678858658965,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.1"
+          ]
+        },
+        {
+          "id": "Q41",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Verschleiss",
+          "top": [
+            "3.1"
+          ],
+          "top1_score": 3.9443394293294824,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.1"
+          ]
+        },
+        {
+          "id": "Q42",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Schäden absichtlich verursacht",
+          "top": [
+            "3.3",
+            "2.1",
+            "2.2"
+          ],
+          "top1_score": 3.378411164025317,
+          "n_results": 3,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q43",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Selbstbehalt",
+          "top": [
+            "1.3"
+          ],
+          "top1_score": 3.9443394293294824,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.3"
+          ]
+        },
+        {
+          "id": "Q44",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Einbruchspuren",
+          "top": [
+            "2.3"
+          ],
+          "top1_score": 4.321014980166637,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q45",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "pipe burst water damage",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "1.2",
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q46",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "empty house more than 60 days theft",
+          "top": [
+            "3.2"
+          ],
+          "top1_score": 2.901427824310651,
+          "n_results": 1,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q47",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "deductible",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "1.3"
+          ]
+        },
+        {
+          "id": "Q48",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "intentional damage",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q49",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "lightning fire",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "2.1"
+          ]
+        },
+        {
+          "id": "Q50",
+          "category": "unanswerable",
+          "lang": "en",
+          "query": "earthquake coverage in Japan",
+          "top": [
+            "1.1",
+            "3.3",
+            "1.2"
+          ],
+          "top1_score": 1.9259104872353399,
+          "n_results": 3
+        },
+        {
+          "id": "Q51",
+          "category": "unanswerable",
+          "lang": "en",
+          "query": "pet insurance dog bite",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0
+        },
+        {
+          "id": "Q52",
+          "category": "unanswerable",
+          "lang": "en",
+          "query": "cyber attack ransomware",
+          "top": [],
+          "top1_score": null,
+          "n_results": 0
+        }
+      ]
+    },
+    {
+      "arm": "vector",
+      "method": "vector",
+      "overall": {
+        "n": 49,
+        "MRR": 0.7827826368642697,
+        "recall@1": 0.6224489795918368,
+        "hit@1": 0.6938775510204082,
+        "recall@3": 0.8061224489795918,
+        "hit@3": 0.8163265306122449,
+        "recall@5": 0.8673469387755102,
+        "hit@5": 0.8775510204081632
+      },
+      "by_category": {
+        "cross_lingual": {
+          "n": 5,
+          "MRR": 0.7285714285714285,
+          "recall@1": 0.5,
+          "hit@1": 0.6,
+          "recall@3": 0.8,
+          "hit@3": 0.8,
+          "recall@5": 0.8,
+          "hit@5": 0.8
+        },
+        "exact_id": {
+          "n": 6,
+          "MRR": 0.27010582010582007,
+          "recall@1": 0.16666666666666666,
+          "hit@1": 0.16666666666666666,
+          "recall@3": 0.16666666666666666,
+          "hit@3": 0.16666666666666666,
+          "recall@5": 0.3333333333333333,
+          "hit@5": 0.3333333333333333
+        },
+        "lexical": {
+          "n": 10,
+          "MRR": 0.95,
+          "recall@1": 0.85,
+          "hit@1": 0.9,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0
+        },
+        "multilingual": {
+          "n": 16,
+          "MRR": 0.809375,
+          "recall@1": 0.625,
+          "hit@1": 0.6875,
+          "recall@3": 0.875,
+          "hit@3": 0.875,
+          "recall@5": 1.0,
+          "hit@5": 1.0
+        },
+        "paraphrase": {
+          "n": 12,
+          "MRR": 0.8869047619047619,
+          "recall@1": 0.7083333333333334,
+          "hit@1": 0.8333333333333334,
+          "recall@3": 0.875,
+          "hit@3": 0.9166666666666666,
+          "recall@5": 0.875,
+          "hit@5": 0.9166666666666666
+        }
+      },
+      "failures_hit@5": [
+        {
+          "id": "Q01",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "clause 4.3",
+          "top": [
+            "1.3",
+            "4.4",
+            "5.2",
+            "5.3",
+            "4.1"
+          ],
+          "top1_score": 0.4693620502948761,
+          "n_results": 10,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "4.3"
+          ]
+        },
+        {
+          "id": "Q02",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "what does 3.2 say",
+          "top": [
+            "1.3",
+            "1.1",
+            "5.1",
+            "3.3",
+            "2.3"
+          ],
+          "top1_score": 0.45074406266212463,
+          "n_results": 10,
+          "first_rank": 9,
+          "rr": 0.1111111111111111,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q03",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "5.4",
+          "top": [
+            "5.1",
+            "5.3",
+            "4.1",
+            "2.1",
+            "1.1"
+          ],
+          "top1_score": 0.3465617597103119,
+          "n_results": 10,
+          "first_rank": 6,
+          "rr": 0.16666666666666666,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "5.4"
+          ]
+        },
+        {
+          "id": "Q05",
+          "category": "exact_id",
+          "lang": "fr",
+          "query": "article 3.2",
+          "top": [
+            "1.3",
+            "3.3",
+            "2.1",
+            "1.1",
+            "3.1"
+          ],
+          "top1_score": 0.35865122079849243,
+          "n_results": 9,
+          "first_rank": 7,
+          "rr": 0.14285714285714285,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q20",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "I broke the vase on purpose",
+          "top": [
+            "4.2",
+            "3.1",
+            "3.2",
+            "2.1",
+            "5.2"
+          ],
+          "top1_score": 0.2986745238304138,
+          "n_results": 10,
+          "first_rank": 7,
+          "rr": 0.14285714285714285,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "4.4"
+          ]
+        },
+        {
+          "id": "Q47",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "deductible",
+          "top": [
+            "2.2",
+            "3.3",
+            "1.2",
+            "1.1",
+            "2.3"
+          ],
+          "top1_score": 0.3810420632362366,
+          "n_results": 9,
+          "first_rank": 7,
+          "rr": 0.14285714285714285,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "1.3"
+          ]
+        }
+      ],
+      "unanswerable": [
+        {
+          "id": "Q50",
+          "query": "earthquake coverage in Japan",
+          "n_results": 10,
+          "top1_score": 0.34909874200820923
+        },
+        {
+          "id": "Q51",
+          "query": "pet insurance dog bite",
+          "n_results": 10,
+          "top1_score": 0.09948761016130447
+        },
+        {
+          "id": "Q52",
+          "query": "cyber attack ransomware",
+          "n_results": 10,
+          "top1_score": 0.29488837718963623
+        }
+      ],
+      "answerable_top1_score_median": 0.5394278764724731,
+      "latency_ms_mean": 84.87707884453881,
+      "latency_ms_p95": 116.57509999349713,
+      "per_case": [
+        {
+          "id": "Q01",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "clause 4.3",
+          "top": [
+            "1.3",
+            "4.4",
+            "5.2",
+            "5.3",
+            "4.1"
+          ],
+          "top1_score": 0.4693620502948761,
+          "n_results": 10,
+          "first_rank": null,
+          "rr": 0.0,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "4.3"
+          ]
+        },
+        {
+          "id": "Q02",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "what does 3.2 say",
+          "top": [
+            "1.3",
+            "1.1",
+            "5.1",
+            "3.3",
+            "2.3"
+          ],
+          "top1_score": 0.45074406266212463,
+          "n_results": 10,
+          "first_rank": 9,
+          "rr": 0.1111111111111111,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q03",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "5.4",
+          "top": [
+            "5.1",
+            "5.3",
+            "4.1",
+            "2.1",
+            "1.1"
+          ],
+          "top1_score": 0.3465617597103119,
+          "n_results": 10,
+          "first_rank": 6,
+          "rr": 0.16666666666666666,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "5.4"
+          ]
+        },
+        {
+          "id": "Q04",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "section 2.3",
+          "top": [
+            "2.3",
+            "4.2",
+            "4.4",
+            "2.2",
+            "3.3"
+          ],
+          "top1_score": 0.18239746987819672,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q05",
+          "category": "exact_id",
+          "lang": "fr",
+          "query": "article 3.2",
+          "top": [
+            "1.3",
+            "3.3",
+            "2.1",
+            "1.1",
+            "3.1"
+          ],
+          "top1_score": 0.35865122079849243,
+          "n_results": 9,
+          "first_rank": 7,
+          "rr": 0.14285714285714285,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q06",
+          "category": "exact_id",
+          "lang": "de",
+          "query": "Ziffer 3.2",
+          "top": [
+            "3.3",
+            "3.1",
+            "2.3",
+            "2.1",
+            "3.2"
+          ],
+          "top1_score": 0.2215094119310379,
+          "n_results": 9,
+          "first_rank": 5,
+          "rr": 0.2,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q07",
+          "category": "lexical",
+          "lang": "en",
+          "query": "excess amount per claim",
+          "top": [
+            "5.3",
+            "5.4",
+            "2.3",
+            "5.2",
+            "4.4"
+          ],
+          "top1_score": 0.7265722751617432,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "5.3"
+          ]
+        },
+        {
+          "id": "Q08",
+          "category": "lexical",
+          "lang": "en",
+          "query": "war and terrorism",
+          "top": [
+            "4.1",
+            "2.2",
+            "2.1",
+            "2.3",
+            "5.4"
+          ],
+          "top1_score": 0.6992524266242981,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.1"
+          ]
+        },
+        {
+          "id": "Q09",
+          "category": "lexical",
+          "lang": "en",
+          "query": "baggage limit single item",
+          "top": [
+            "4.1",
+            "4.2",
+            "4.3",
+            "4.4",
+            "2.3"
+          ],
+          "top1_score": 0.7945091724395752,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.1"
+          ]
+        },
+        {
+          "id": "Q10",
+          "category": "lexical",
+          "lang": "en",
+          "query": "flood extension schedule",
+          "top": [
+            "3.3",
+            "4.3",
+            "3.1",
+            "3.2",
+            "2.2"
+          ],
+          "top1_score": 0.6305688619613647,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q11",
+          "category": "lexical",
+          "lang": "en",
+          "query": "notify within 30 days",
+          "top": [
+            "5.1",
+            "4.3",
+            "1.3",
+            "4.4",
+            "5.2"
+          ],
+          "top1_score": 0.6206710338592529,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "5.1"
+          ]
+        },
+        {
+          "id": "Q12",
+          "category": "lexical",
+          "lang": "en",
+          "query": "delay compensation hours departure",
+          "top": [
+            "3.2",
+            "3.1",
+            "3.3",
+            "2.2",
+            "1.1"
+          ],
+          "top1_score": 0.7937172055244446,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q13",
+          "category": "lexical",
+          "lang": "en",
+          "query": "hazardous activities skydiving extension",
+          "top": [
+            "4.3",
+            "4.2",
+            "4.1",
+            "3.1",
+            "4.4"
+          ],
+          "top1_score": 0.6835901737213135,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.3"
+          ]
+        },
+        {
+          "id": "Q14",
+          "category": "lexical",
+          "lang": "en",
+          "query": "police report theft",
+          "top": [
+            "2.3",
+            "5.2",
+            "3.2",
+            "3.1",
+            "4.3"
+          ],
+          "top1_score": 0.5780443549156189,
+          "n_results": 10,
+          "first_rank": 2,
+          "rr": 0.5,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "5.2"
+          ]
+        },
+        {
+          "id": "Q15",
+          "category": "lexical",
+          "lang": "en",
+          "query": "repatriation cost returning home",
+          "top": [
+            "2.2",
+            "4.1",
+            "2.1",
+            "3.2",
+            "1.1"
+          ],
+          "top1_score": 0.7737185955047607,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q16",
+          "category": "lexical",
+          "lang": "en",
+          "query": "pre-existing condition declared in writing",
+          "top": [
+            "1.2",
+            "2.3",
+            "1.3",
+            "3.3",
+            "4.4"
+          ],
+          "top1_score": 0.5793104767799377,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3",
+            "1.2"
+          ]
+        },
+        {
+          "id": "Q17",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "my kitchen pipe suddenly burst and flooded the floor",
+          "top": [
+            "3.1",
+            "3.2",
+            "2.1",
+            "5.4",
+            "3.3"
+          ],
+          "top1_score": 0.59847092628479,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.1"
+          ]
+        },
+        {
+          "id": "Q18",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "slow drip behind the wall over many months",
+          "top": [
+            "3.2",
+            "3.1",
+            "5.4",
+            "2.2",
+            "4.2"
+          ],
+          "top1_score": 0.5321249961853027,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q19",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "nobody lived in the house for three months and it was burgled",
+          "top": [
+            "4.3",
+            "5.4",
+            "3.2",
+            "1.1",
+            "3.1"
+          ],
+          "top1_score": 0.3937152326107025,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 0.5,
+          "hit@3": 1.0,
+          "recall@5": 0.5,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.3",
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q20",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "I broke the vase on purpose",
+          "top": [
+            "4.2",
+            "3.1",
+            "3.2",
+            "2.1",
+            "5.2"
+          ],
+          "top1_score": 0.2986745238304138,
+          "n_results": 10,
+          "first_rank": 7,
+          "rr": 0.14285714285714285,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "4.4"
+          ]
+        },
+        {
+          "id": "Q21",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "burglars got in but there is no sign of a break-in",
+          "top": [
+            "3.2",
+            "2.3",
+            "4.3",
+            "3.1",
+            "5.2"
+          ],
+          "top1_score": 0.3009457588195801,
+          "n_results": 10,
+          "first_rank": 2,
+          "rr": 0.5,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q22",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "hurricane tore off the roof tiles",
+          "top": [
+            "2.2",
+            "5.4",
+            "3.1",
+            "2.1",
+            "3.3"
+          ],
+          "top1_score": 0.38116204738616943,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q23",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "my suitcase was stolen from a bench while I went to the toilet",
+          "top": [
+            "4.1",
+            "4.2",
+            "2.2",
+            "4.3",
+            "4.4"
+          ],
+          "top1_score": 0.48212629556655884,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.2",
+            "4.1"
+          ]
+        },
+        {
+          "id": "Q24",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "I was drunk when I got injured",
+          "top": [
+            "4.4",
+            "4.3",
+            "2.3",
+            "2.1",
+            "2.2"
+          ],
+          "top1_score": 0.4169304370880127,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.4"
+          ]
+        },
+        {
+          "id": "Q25",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "cancelled my trip because I simply changed my mind",
+          "top": [
+            "3.3",
+            "3.1",
+            "3.2",
+            "1.1",
+            "2.3"
+          ],
+          "top1_score": 0.5391762852668762,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q26",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "ski racing as a job",
+          "top": [
+            "4.3",
+            "1.1",
+            "1.3",
+            "3.1",
+            "3.2"
+          ],
+          "top1_score": 0.19571876525878906,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.3"
+          ]
+        },
+        {
+          "id": "Q27",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "my flight left 10 hours late, what do I get",
+          "top": [
+            "3.2",
+            "3.1",
+            "1.1",
+            "3.3",
+            "4.1"
+          ],
+          "top1_score": 0.5576747059822083,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q28",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "an illness I already had before buying the policy",
+          "top": [
+            "2.3",
+            "1.2",
+            "2.1",
+            "3.1",
+            "4.4"
+          ],
+          "top1_score": 0.4795494079589844,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3",
+            "1.2"
+          ]
+        },
+        {
+          "id": "Q29",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "franchise après sinistre",
+          "top": [
+            "1.3",
+            "1.1",
+            "2.1",
+            "2.2",
+            "3.3"
+          ],
+          "top1_score": 0.5898823738098145,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.3"
+          ]
+        },
+        {
+          "id": "Q30",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "vol sans effraction",
+          "top": [
+            "2.3",
+            "3.3",
+            "3.1",
+            "2.1",
+            "3.2"
+          ],
+          "top1_score": 0.3366711735725403,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q31",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "dégât des eaux canalisation",
+          "top": [
+            "1.2",
+            "2.2",
+            "2.1",
+            "3.3",
+            "3.1"
+          ],
+          "top1_score": 0.8151392340660095,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.2",
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q32",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "logement inoccupé 60 jours",
+          "top": [
+            "3.2",
+            "1.2",
+            "1.3",
+            "2.2",
+            "1.1"
+          ],
+          "top1_score": 0.6983574628829956,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q33",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "usure et humidité progressive",
+          "top": [
+            "3.1",
+            "1.2",
+            "2.2",
+            "2.1",
+            "3.2"
+          ],
+          "top1_score": 0.5394278764724731,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.1"
+          ]
+        },
+        {
+          "id": "Q34",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "dommages causés volontairement",
+          "top": [
+            "3.3",
+            "2.2",
+            "1.2",
+            "2.1",
+            "1.1"
+          ],
+          "top1_score": 0.6756003499031067,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q35",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "degat des eaux",
+          "top": [
+            "1.2",
+            "2.2",
+            "3.1",
+            "2.1",
+            "3.3"
+          ],
+          "top1_score": 0.5927925109863281,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.2",
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q36",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "foudre",
+          "top": [
+            "2.1",
+            "1.2",
+            "1.1",
+            "1.3",
+            "2.2"
+          ],
+          "top1_score": 0.4164798855781555,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.1"
+          ]
+        },
+        {
+          "id": "Q37",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Leitungswasserschaden",
+          "top": [
+            "1.2",
+            "2.2",
+            "3.3",
+            "3.1",
+            "2.1"
+          ],
+          "top1_score": 0.8337002992630005,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.2"
+          ]
+        },
+        {
+          "id": "Q38",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Wasserschaden durch Rohrbruch",
+          "top": [
+            "1.2",
+            "2.2",
+            "3.3",
+            "2.1",
+            "3.1"
+          ],
+          "top1_score": 0.8343663215637207,
+          "n_results": 9,
+          "first_rank": 2,
+          "rr": 0.5,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q39",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Leerstand mehr als 60 Tage",
+          "top": [
+            "3.2",
+            "2.3",
+            "1.2",
+            "3.1",
+            "2.2"
+          ],
+          "top1_score": 0.6728044748306274,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q40",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Schimmel Rost",
+          "top": [
+            "2.1",
+            "3.1",
+            "3.2",
+            "1.2",
+            "2.2"
+          ],
+          "top1_score": 0.16458134353160858,
+          "n_results": 9,
+          "first_rank": 2,
+          "rr": 0.5,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.1"
+          ]
+        },
+        {
+          "id": "Q41",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Verschleiss",
+          "top": [
+            "2.1",
+            "1.2",
+            "3.2",
+            "3.1",
+            "2.3"
+          ],
+          "top1_score": 0.3238872289657593,
+          "n_results": 9,
+          "first_rank": 4,
+          "rr": 0.25,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.1"
+          ]
+        },
+        {
+          "id": "Q42",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Schäden absichtlich verursacht",
+          "top": [
+            "1.2",
+            "3.3",
+            "2.1",
+            "2.2",
+            "3.1"
+          ],
+          "top1_score": 0.6510278582572937,
+          "n_results": 9,
+          "first_rank": 2,
+          "rr": 0.5,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q43",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Selbstbehalt",
+          "top": [
+            "1.3",
+            "2.1",
+            "1.2",
+            "3.2",
+            "3.3"
+          ],
+          "top1_score": 0.5118801593780518,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.3"
+          ]
+        },
+        {
+          "id": "Q44",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Einbruchspuren",
+          "top": [
+            "1.2",
+            "2.1",
+            "2.2",
+            "3.1",
+            "2.3"
+          ],
+          "top1_score": 0.497203528881073,
+          "n_results": 9,
+          "first_rank": 5,
+          "rr": 0.2,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q45",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "pipe burst water damage",
+          "top": [
+            "1.2",
+            "2.2",
+            "2.1",
+            "3.3",
+            "1.1"
+          ],
+          "top1_score": 0.6160879731178284,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.2",
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q46",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "empty house more than 60 days theft",
+          "top": [
+            "3.2",
+            "2.3",
+            "1.2",
+            "3.1",
+            "2.2"
+          ],
+          "top1_score": 0.5067381262779236,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q47",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "deductible",
+          "top": [
+            "2.2",
+            "3.3",
+            "1.2",
+            "1.1",
+            "2.3"
+          ],
+          "top1_score": 0.3810420632362366,
+          "n_results": 9,
+          "first_rank": 7,
+          "rr": 0.14285714285714285,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "1.3"
+          ]
+        },
+        {
+          "id": "Q48",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "intentional damage",
+          "top": [
+            "1.2",
+            "3.3",
+            "2.1",
+            "2.2",
+            "3.1"
+          ],
+          "top1_score": 0.6290563941001892,
+          "n_results": 9,
+          "first_rank": 2,
+          "rr": 0.5,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q49",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "lightning fire",
+          "top": [
+            "2.1",
+            "1.2",
+            "1.1",
+            "3.1",
+            "3.3"
+          ],
+          "top1_score": 0.5920466184616089,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.1"
+          ]
+        },
+        {
+          "id": "Q50",
+          "category": "unanswerable",
+          "lang": "en",
+          "query": "earthquake coverage in Japan",
+          "top": [
+            "5.4",
+            "2.2",
+            "3.1",
+            "3.3",
+            "2.1"
+          ],
+          "top1_score": 0.34909874200820923,
+          "n_results": 10
+        },
+        {
+          "id": "Q51",
+          "category": "unanswerable",
+          "lang": "en",
+          "query": "pet insurance dog bite",
+          "top": [
+            "1.2",
+            "4.1",
+            "2.1",
+            "4.3",
+            "2.2"
+          ],
+          "top1_score": 0.09948761016130447,
+          "n_results": 10
+        },
+        {
+          "id": "Q52",
+          "category": "unanswerable",
+          "lang": "en",
+          "query": "cyber attack ransomware",
+          "top": [
+            "2.3",
+            "4.1",
+            "5.2",
+            "2.2",
+            "1.3"
+          ],
+          "top1_score": 0.29488837718963623,
+          "n_results": 10
+        }
+      ]
+    },
+    {
+      "arm": "hybrid RRF",
+      "method": "hybrid_rrf",
+      "overall": {
+        "n": 49,
+        "MRR": 0.9131195335276969,
+        "recall@1": 0.8061224489795918,
+        "hit@1": 0.8775510204081632,
+        "recall@3": 0.8979591836734694,
+        "hit@3": 0.9183673469387755,
+        "recall@5": 0.9387755102040817,
+        "hit@5": 0.9591836734693877
+      },
+      "by_category": {
+        "cross_lingual": {
+          "n": 5,
+          "MRR": 0.7285714285714285,
+          "recall@1": 0.5,
+          "hit@1": 0.6,
+          "recall@3": 0.8,
+          "hit@3": 0.8,
+          "recall@5": 0.8,
+          "hit@5": 0.8
+        },
+        "exact_id": {
+          "n": 6,
+          "MRR": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0
+        },
+        "lexical": {
+          "n": 10,
+          "MRR": 0.95,
+          "recall@1": 0.85,
+          "hit@1": 0.9,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0
+        },
+        "multilingual": {
+          "n": 16,
+          "MRR": 1.0,
+          "recall@1": 0.9375,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0
+        },
+        "paraphrase": {
+          "n": 12,
+          "MRR": 0.7999999999999999,
+          "recall@1": 0.625,
+          "hit@1": 0.75,
+          "recall@3": 0.6666666666666666,
+          "hit@3": 0.75,
+          "recall@5": 0.8333333333333334,
+          "hit@5": 0.9166666666666666
+        }
+      },
+      "failures_hit@5": [
+        {
+          "id": "Q18",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "slow drip behind the wall over many months",
+          "top": [
+            "3.1",
+            "3.3",
+            "5.4",
+            "2.2",
+            "5.1"
+          ],
+          "top1_score": 0.03200204813108039,
+          "n_results": 10,
+          "first_rank": 10,
+          "rr": 0.1,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q47",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "deductible",
+          "top": [
+            "2.2",
+            "3.3",
+            "1.2",
+            "1.1",
+            "2.3"
+          ],
+          "top1_score": 0.01639344262295082,
+          "n_results": 9,
+          "first_rank": 7,
+          "rr": 0.14285714285714285,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "1.3"
+          ]
+        }
+      ],
+      "unanswerable": [
+        {
+          "id": "Q50",
+          "query": "earthquake coverage in Japan",
+          "n_results": 10,
+          "top1_score": 0.031754032258064516
+        },
+        {
+          "id": "Q51",
+          "query": "pet insurance dog bite",
+          "n_results": 10,
+          "top1_score": 0.01639344262295082
+        },
+        {
+          "id": "Q52",
+          "query": "cyber attack ransomware",
+          "n_results": 10,
+          "top1_score": 0.01639344262295082
+        }
+      ],
+      "answerable_top1_score_median": 0.03252247488101534,
+      "latency_ms_mean": 52.16042115185141,
+      "latency_ms_p95": 79.43849998991936,
+      "per_case": [
+        {
+          "id": "Q01",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "clause 4.3",
+          "top": [
+            "4.3",
+            "1.3",
+            "4.4",
+            "5.2",
+            "5.3"
+          ],
+          "top1_score": 0.03009207275993712,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.3"
+          ]
+        },
+        {
+          "id": "Q02",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "what does 3.2 say",
+          "top": [
+            "3.2",
+            "1.3",
+            "1.1",
+            "5.1",
+            "3.3"
+          ],
+          "top1_score": 0.030886196246139225,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q03",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "5.4",
+          "top": [
+            "5.4",
+            "5.1",
+            "5.3",
+            "4.1",
+            "2.1"
+          ],
+          "top1_score": 0.031544957774465976,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "5.4"
+          ]
+        },
+        {
+          "id": "Q04",
+          "category": "exact_id",
+          "lang": "en",
+          "query": "section 2.3",
+          "top": [
+            "2.3",
+            "4.2",
+            "4.4",
+            "2.2",
+            "3.3"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q05",
+          "category": "exact_id",
+          "lang": "fr",
+          "query": "article 3.2",
+          "top": [
+            "3.2",
+            "1.3",
+            "3.3",
+            "2.1",
+            "1.1"
+          ],
+          "top1_score": 0.03131881575727918,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q06",
+          "category": "exact_id",
+          "lang": "de",
+          "query": "Ziffer 3.2",
+          "top": [
+            "3.2",
+            "3.3",
+            "3.1",
+            "2.3",
+            "2.1"
+          ],
+          "top1_score": 0.03177805800756621,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q07",
+          "category": "lexical",
+          "lang": "en",
+          "query": "excess amount per claim",
+          "top": [
+            "5.3",
+            "1.3",
+            "5.4",
+            "2.3",
+            "5.2"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "5.3"
+          ]
+        },
+        {
+          "id": "Q08",
+          "category": "lexical",
+          "lang": "en",
+          "query": "war and terrorism",
+          "top": [
+            "4.1",
+            "2.1",
+            "4.2",
+            "5.2",
+            "3.1"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.1"
+          ]
+        },
+        {
+          "id": "Q09",
+          "category": "lexical",
+          "lang": "en",
+          "query": "baggage limit single item",
+          "top": [
+            "4.1",
+            "4.2",
+            "4.3",
+            "4.4",
+            "2.3"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.1"
+          ]
+        },
+        {
+          "id": "Q10",
+          "category": "lexical",
+          "lang": "en",
+          "query": "flood extension schedule",
+          "top": [
+            "3.3",
+            "1.1",
+            "4.3",
+            "3.1",
+            "3.2"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q11",
+          "category": "lexical",
+          "lang": "en",
+          "query": "notify within 30 days",
+          "top": [
+            "5.1",
+            "4.3",
+            "1.3",
+            "4.4",
+            "5.2"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "5.1"
+          ]
+        },
+        {
+          "id": "Q12",
+          "category": "lexical",
+          "lang": "en",
+          "query": "delay compensation hours departure",
+          "top": [
+            "3.2",
+            "3.1",
+            "3.3",
+            "2.2",
+            "1.1"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q13",
+          "category": "lexical",
+          "lang": "en",
+          "query": "hazardous activities skydiving extension",
+          "top": [
+            "4.3",
+            "4.2",
+            "4.1",
+            "3.1",
+            "4.4"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.3"
+          ]
+        },
+        {
+          "id": "Q14",
+          "category": "lexical",
+          "lang": "en",
+          "query": "police report theft",
+          "top": [
+            "2.3",
+            "5.2",
+            "4.3",
+            "3.2",
+            "3.1"
+          ],
+          "top1_score": 0.03252247488101534,
+          "n_results": 10,
+          "first_rank": 2,
+          "rr": 0.5,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "5.2"
+          ]
+        },
+        {
+          "id": "Q15",
+          "category": "lexical",
+          "lang": "en",
+          "query": "repatriation cost returning home",
+          "top": [
+            "2.2",
+            "4.1",
+            "2.1",
+            "3.2",
+            "1.1"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q16",
+          "category": "lexical",
+          "lang": "en",
+          "query": "pre-existing condition declared in writing",
+          "top": [
+            "1.2",
+            "2.3",
+            "1.3",
+            "4.2",
+            "4.1"
+          ],
+          "top1_score": 0.03252247488101534,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3",
+            "1.2"
+          ]
+        },
+        {
+          "id": "Q17",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "my kitchen pipe suddenly burst and flooded the floor",
+          "top": [
+            "3.1",
+            "2.1",
+            "4.3",
+            "3.3",
+            "5.4"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.1"
+          ]
+        },
+        {
+          "id": "Q18",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "slow drip behind the wall over many months",
+          "top": [
+            "3.1",
+            "3.3",
+            "5.4",
+            "2.2",
+            "5.1"
+          ],
+          "top1_score": 0.03200204813108039,
+          "n_results": 10,
+          "first_rank": 10,
+          "rr": 0.1,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q19",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "nobody lived in the house for three months and it was burgled",
+          "top": [
+            "4.3",
+            "1.1",
+            "5.4",
+            "3.1",
+            "3.3"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 0.5,
+          "hit@3": 1.0,
+          "recall@5": 0.5,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.3",
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q20",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "I broke the vase on purpose",
+          "top": [
+            "3.1",
+            "2.1",
+            "3.3",
+            "4.4",
+            "5.4"
+          ],
+          "top1_score": 0.03200204813108039,
+          "n_results": 10,
+          "first_rank": 4,
+          "rr": 0.25,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.4"
+          ]
+        },
+        {
+          "id": "Q21",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "burglars got in but there is no sign of a break-in",
+          "top": [
+            "2.3",
+            "4.3",
+            "3.3",
+            "3.1",
+            "3.2"
+          ],
+          "top1_score": 0.03252247488101534,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q22",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "hurricane tore off the roof tiles",
+          "top": [
+            "3.1",
+            "3.3",
+            "5.4",
+            "2.2",
+            "2.1"
+          ],
+          "top1_score": 0.031746031746031744,
+          "n_results": 10,
+          "first_rank": 4,
+          "rr": 0.25,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q23",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "my suitcase was stolen from a bench while I went to the toilet",
+          "top": [
+            "4.1",
+            "4.4",
+            "2.3",
+            "1.1",
+            "3.2"
+          ],
+          "top1_score": 0.03252247488101534,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 0.5,
+          "hit@3": 1.0,
+          "recall@5": 0.5,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.2",
+            "4.1"
+          ]
+        },
+        {
+          "id": "Q24",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "I was drunk when I got injured",
+          "top": [
+            "4.4",
+            "4.3",
+            "2.3",
+            "2.1",
+            "2.2"
+          ],
+          "top1_score": 0.01639344262295082,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.4"
+          ]
+        },
+        {
+          "id": "Q25",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "cancelled my trip because I simply changed my mind",
+          "top": [
+            "3.3",
+            "1.1",
+            "3.1",
+            "2.3",
+            "3.2"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q26",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "ski racing as a job",
+          "top": [
+            "4.3",
+            "1.1",
+            "1.3",
+            "3.1",
+            "3.2"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "4.3"
+          ]
+        },
+        {
+          "id": "Q27",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "my flight left 10 hours late, what do I get",
+          "top": [
+            "3.2",
+            "4.2",
+            "4.4",
+            "3.1",
+            "1.1"
+          ],
+          "top1_score": 0.03252247488101534,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q28",
+          "category": "paraphrase",
+          "lang": "en",
+          "query": "an illness I already had before buying the policy",
+          "top": [
+            "1.2",
+            "2.3",
+            "3.1",
+            "4.4",
+            "2.2"
+          ],
+          "top1_score": 0.03252247488101534,
+          "n_results": 10,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3",
+            "1.2"
+          ]
+        },
+        {
+          "id": "Q29",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "franchise après sinistre",
+          "top": [
+            "1.3",
+            "1.1",
+            "2.1",
+            "2.2",
+            "3.3"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.3"
+          ]
+        },
+        {
+          "id": "Q30",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "vol sans effraction",
+          "top": [
+            "2.3",
+            "3.2",
+            "3.3",
+            "3.1",
+            "2.1"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q31",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "dégât des eaux canalisation",
+          "top": [
+            "1.2",
+            "2.2",
+            "2.1",
+            "3.3",
+            "3.1"
+          ],
+          "top1_score": 0.03252247488101534,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.2",
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q32",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "logement inoccupé 60 jours",
+          "top": [
+            "3.2",
+            "1.2",
+            "1.3",
+            "2.2",
+            "1.1"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q33",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "usure et humidité progressive",
+          "top": [
+            "3.1",
+            "1.2",
+            "2.2",
+            "2.1",
+            "3.2"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.1"
+          ]
+        },
+        {
+          "id": "Q34",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "dommages causés volontairement",
+          "top": [
+            "3.3",
+            "2.2",
+            "2.1",
+            "1.2",
+            "1.1"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q35",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "degat des eaux",
+          "top": [
+            "1.2",
+            "2.2",
+            "3.1",
+            "2.1",
+            "3.3"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.2",
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q36",
+          "category": "multilingual",
+          "lang": "fr",
+          "query": "foudre",
+          "top": [
+            "2.1",
+            "1.2",
+            "1.1",
+            "1.3",
+            "2.2"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.1"
+          ]
+        },
+        {
+          "id": "Q37",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Leitungswasserschaden",
+          "top": [
+            "1.2",
+            "2.2",
+            "3.3",
+            "3.1",
+            "2.1"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.2"
+          ]
+        },
+        {
+          "id": "Q38",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Wasserschaden durch Rohrbruch",
+          "top": [
+            "2.2",
+            "2.1",
+            "1.2",
+            "3.3",
+            "3.1"
+          ],
+          "top1_score": 0.03252247488101534,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q39",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Leerstand mehr als 60 Tage",
+          "top": [
+            "3.2",
+            "2.3",
+            "1.2",
+            "3.1",
+            "2.2"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q40",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Schimmel Rost",
+          "top": [
+            "3.1",
+            "2.1",
+            "3.2",
+            "1.2",
+            "2.2"
+          ],
+          "top1_score": 0.03252247488101534,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.1"
+          ]
+        },
+        {
+          "id": "Q41",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Verschleiss",
+          "top": [
+            "3.1",
+            "2.1",
+            "1.2",
+            "3.2",
+            "2.3"
+          ],
+          "top1_score": 0.032018442622950824,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.1"
+          ]
+        },
+        {
+          "id": "Q42",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Schäden absichtlich verursacht",
+          "top": [
+            "3.3",
+            "2.1",
+            "2.2",
+            "1.2",
+            "3.1"
+          ],
+          "top1_score": 0.03252247488101534,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q43",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Selbstbehalt",
+          "top": [
+            "1.3",
+            "2.1",
+            "1.2",
+            "3.2",
+            "3.3"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.3"
+          ]
+        },
+        {
+          "id": "Q44",
+          "category": "multilingual",
+          "lang": "de",
+          "query": "Einbruchspuren",
+          "top": [
+            "2.3",
+            "1.2",
+            "2.1",
+            "2.2",
+            "3.1"
+          ],
+          "top1_score": 0.03177805800756621,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.3"
+          ]
+        },
+        {
+          "id": "Q45",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "pipe burst water damage",
+          "top": [
+            "1.2",
+            "2.2",
+            "2.1",
+            "3.3",
+            "1.1"
+          ],
+          "top1_score": 0.01639344262295082,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 0.5,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "1.2",
+            "2.2"
+          ]
+        },
+        {
+          "id": "Q46",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "empty house more than 60 days theft",
+          "top": [
+            "3.2",
+            "2.3",
+            "1.2",
+            "3.1",
+            "2.2"
+          ],
+          "top1_score": 0.03278688524590164,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.2"
+          ]
+        },
+        {
+          "id": "Q47",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "deductible",
+          "top": [
+            "2.2",
+            "3.3",
+            "1.2",
+            "1.1",
+            "2.3"
+          ],
+          "top1_score": 0.01639344262295082,
+          "n_results": 9,
+          "first_rank": 7,
+          "rr": 0.14285714285714285,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 0.0,
+          "hit@3": 0.0,
+          "recall@5": 0.0,
+          "hit@5": 0.0,
+          "relevant": [
+            "1.3"
+          ]
+        },
+        {
+          "id": "Q48",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "intentional damage",
+          "top": [
+            "1.2",
+            "3.3",
+            "2.1",
+            "2.2",
+            "3.1"
+          ],
+          "top1_score": 0.01639344262295082,
+          "n_results": 9,
+          "first_rank": 2,
+          "rr": 0.5,
+          "recall@1": 0.0,
+          "hit@1": 0.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "3.3"
+          ]
+        },
+        {
+          "id": "Q49",
+          "category": "cross_lingual",
+          "lang": "en",
+          "query": "lightning fire",
+          "top": [
+            "2.1",
+            "1.2",
+            "1.1",
+            "3.1",
+            "3.3"
+          ],
+          "top1_score": 0.01639344262295082,
+          "n_results": 9,
+          "first_rank": 1,
+          "rr": 1.0,
+          "recall@1": 1.0,
+          "hit@1": 1.0,
+          "recall@3": 1.0,
+          "hit@3": 1.0,
+          "recall@5": 1.0,
+          "hit@5": 1.0,
+          "relevant": [
+            "2.1"
+          ]
+        },
+        {
+          "id": "Q50",
+          "category": "unanswerable",
+          "lang": "en",
+          "query": "earthquake coverage in Japan",
+          "top": [
+            "3.3",
+            "1.1",
+            "1.2",
+            "5.4",
+            "2.2"
+          ],
+          "top1_score": 0.031754032258064516,
+          "n_results": 10
+        },
+        {
+          "id": "Q51",
+          "category": "unanswerable",
+          "lang": "en",
+          "query": "pet insurance dog bite",
+          "top": [
+            "1.2",
+            "4.1",
+            "2.1",
+            "4.3",
+            "2.2"
+          ],
+          "top1_score": 0.01639344262295082,
+          "n_results": 10
+        },
+        {
+          "id": "Q52",
+          "category": "unanswerable",
+          "lang": "en",
+          "query": "cyber attack ransomware",
+          "top": [
+            "2.3",
+            "4.1",
+            "5.2",
+            "2.2",
+            "1.3"
+          ],
+          "top1_score": 0.01639344262295082,
+          "n_results": 10
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Tiny, synthetic, author-written corpus (4 short policies) and author-written cases: results are a regression/smoke benchmark, NOT evidence about real insurance documents or real users.",
+    "Cases are scoped to one document, so each ranker orders only 9-17 chunks; high Recall@5 is easy here and will not transfer to large corpora.",
+    "Small n per category: differences of one case are large percentage swings. No significance tests.",
+    "Paraphrase and cross-lingual cases were written knowing the corpus; they may be easier or harder than real claim narratives.",
+    "RRF parameters (k=60, depth=20) are defaults, not tuned; no tuning was done on these cases.",
+    "Latency is CPU-only, single process, warm model, on one developer machine.",
+    "Unanswerable queries show scores only; no abstention threshold is derived or validated yet."
+  ]
+}

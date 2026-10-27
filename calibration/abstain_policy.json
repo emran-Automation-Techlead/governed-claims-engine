@@ -1,0 +1,10 @@
+{
+  "version": "cal-2026-10-27-v1",
+  "tau_lex": 0.5,
+  "tau_sem": 0.66,
+  "note": "zero-false-accept threshold(s): lex=0.45, sem=0.64; +1 grid step margin; calibrated on 64 cases (28 unanswerable) over 4 synthetic policies; rule-of-three 95% upper bound on false-accept rate ~0.11",
+  "calibration_cases_sha256": "1bb1ba7bc048ad970dd80de02ca4d1618717ae0912fc441a6c88956c96c80b82",
+  "retrieval_analyzer": "M2 baseline (stopwords/subwords not adopted for ranking)",
+  "coverage_analyzer": "stopwords on, subwords off",
+  "window": 3
+}

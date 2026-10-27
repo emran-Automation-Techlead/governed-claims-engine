@@ -1,0 +1,24 @@
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+.env
+*.log
+models/
+demo_logs/
+# secrets and local state (defence in depth; the project should never contain any)
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+id_rsa*
+.aws/
+.ssh/
+credentials*
+*.egg-info/
+.coverage
+.DS_Store
+Thumbs.db

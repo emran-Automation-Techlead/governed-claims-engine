@@ -1,0 +1,694 @@
+{
+  "date": "2026-10-27",
+  "embedding": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+  "m2": {
+    "M2 analyzer (baseline)": {
+      "bm25": {
+        "n": 49,
+        "hit@5": 0.8571428571428571,
+        "recall@3": 0.8163265306122449,
+        "recall@1": 0.7448979591836735,
+        "MRR": 0.8229591836734694,
+        "spurious_on_unanswerable": 1,
+        "n_unanswerable": 3,
+        "failures": [
+          "Q18",
+          "Q22",
+          "Q24",
+          "Q45",
+          "Q47",
+          "Q48",
+          "Q49"
+        ]
+      },
+      "hybrid_rrf": {
+        "n": 49,
+        "hit@5": 0.9591836734693877,
+        "recall@3": 0.8979591836734694,
+        "recall@1": 0.8061224489795918,
+        "MRR": 0.9131195335276969,
+        "spurious_on_unanswerable": 3,
+        "n_unanswerable": 3,
+        "failures": [
+          "Q18",
+          "Q47"
+        ]
+      },
+      "vector": {
+        "n": 49,
+        "hit@5": 0.8775510204081632,
+        "recall@3": 0.8061224489795918,
+        "recall@1": 0.6224489795918368,
+        "MRR": 0.7827826368642697,
+        "spurious_on_unanswerable": 3,
+        "n_unanswerable": 3,
+        "failures": [
+          "Q01",
+          "Q02",
+          "Q03",
+          "Q05",
+          "Q20",
+          "Q47"
+        ]
+      }
+    },
+    "+ stopwords": {
+      "bm25": {
+        "n": 49,
+        "hit@5": 0.7755102040816326,
+        "recall@3": 0.7551020408163265,
+        "recall@1": 0.6938775510204082,
+        "MRR": 0.7551020408163265,
+        "spurious_on_unanswerable": 0,
+        "n_unanswerable": 3,
+        "failures": [
+          "Q18",
+          "Q19",
+          "Q20",
+          "Q21",
+          "Q22",
+          "Q24",
+          "Q26",
+          "Q45",
+          "Q47",
+          "Q48",
+          "Q49"
+        ]
+      },
+      "hybrid_rrf": {
+        "n": 49,
+        "hit@5": 0.9591836734693877,
+        "recall@3": 0.9489795918367347,
+        "recall@1": 0.8061224489795918,
+        "MRR": 0.924198250728863,
+        "spurious_on_unanswerable": 3,
+        "n_unanswerable": 3,
+        "failures": [
+          "Q20",
+          "Q47"
+        ]
+      },
+      "vector": {
+        "n": 49,
+        "hit@5": 0.8775510204081632,
+        "recall@3": 0.8061224489795918,
+        "recall@1": 0.6224489795918368,
+        "MRR": 0.7827826368642697,
+        "spurious_on_unanswerable": 3,
+        "n_unanswerable": 3,
+        "failures": [
+          "Q01",
+          "Q02",
+          "Q03",
+          "Q05",
+          "Q20",
+          "Q47"
+        ]
+      }
+    },
+    "+ stopwords + subwords": {
+      "bm25": {
+        "n": 49,
+        "hit@5": 0.7755102040816326,
+        "recall@3": 0.7551020408163265,
+        "recall@1": 0.673469387755102,
+        "MRR": 0.7448979591836735,
+        "spurious_on_unanswerable": 0,
+        "n_unanswerable": 3,
+        "failures": [
+          "Q18",
+          "Q19",
+          "Q20",
+          "Q21",
+          "Q22",
+          "Q24",
+          "Q26",
+          "Q45",
+          "Q47",
+          "Q48",
+          "Q49"
+        ]
+      },
+      "hybrid_rrf": {
+        "n": 49,
+        "hit@5": 0.9591836734693877,
+        "recall@3": 0.9489795918367347,
+        "recall@1": 0.7857142857142857,
+        "MRR": 0.9139941690962099,
+        "spurious_on_unanswerable": 3,
+        "n_unanswerable": 3,
+        "failures": [
+          "Q20",
+          "Q47"
+        ]
+      },
+      "vector": {
+        "n": 49,
+        "hit@5": 0.8775510204081632,
+        "recall@3": 0.8061224489795918,
+        "recall@1": 0.6224489795918368,
+        "MRR": 0.7827826368642697,
+        "spurious_on_unanswerable": 3,
+        "n_unanswerable": 3,
+        "failures": [
+          "Q01",
+          "Q02",
+          "Q03",
+          "Q05",
+          "Q20",
+          "Q47"
+        ]
+      }
+    },
+    "+ subwords only": {
+      "bm25": {
+        "n": 49,
+        "hit@5": 0.8367346938775511,
+        "recall@3": 0.8163265306122449,
+        "recall@1": 0.7040816326530612,
+        "MRR": 0.8018707482993198,
+        "spurious_on_unanswerable": 1,
+        "n_unanswerable": 3,
+        "failures": [
+          "Q18",
+          "Q20",
+          "Q22",
+          "Q24",
+          "Q45",
+          "Q47",
+          "Q48",
+          "Q49"
+        ]
+      },
+      "hybrid_rrf": {
+        "n": 49,
+        "hit@5": 0.9591836734693877,
+        "recall@3": 0.8979591836734694,
+        "recall@1": 0.7653061224489796,
+        "MRR": 0.8916909620991254,
+        "spurious_on_unanswerable": 3,
+        "n_unanswerable": 3,
+        "failures": [
+          "Q18",
+          "Q47"
+        ]
+      },
+      "vector": {
+        "n": 49,
+        "hit@5": 0.8775510204081632,
+        "recall@3": 0.8061224489795918,
+        "recall@1": 0.6224489795918368,
+        "MRR": 0.7827826368642697,
+        "spurious_on_unanswerable": 3,
+        "n_unanswerable": 3,
+        "failures": [
+          "Q01",
+          "Q02",
+          "Q03",
+          "Q05",
+          "Q20",
+          "Q47"
+        ]
+      }
+    }
+  },
+  "heldout": {
+    "M2 analyzer (baseline)": {
+      "bm25": {
+        "all": {
+          "n": 46,
+          "hit@5": 0.782608695652174,
+          "recall@3": 0.7282608695652174,
+          "recall@1": 0.6521739130434783,
+          "MRR": 0.7364130434782609,
+          "spurious_on_unanswerable": 5,
+          "n_unanswerable": 9
+        },
+        "german_compound": {
+          "n": 7,
+          "hit@5": 0.7142857142857143,
+          "recall@3": 0.7142857142857143,
+          "recall@1": 0.5714285714285714,
+          "MRR": 0.6428571428571429,
+          "spurious_on_unanswerable": 0,
+          "n_unanswerable": 0
+        },
+        "non_compound": {
+          "n": 39,
+          "hit@5": 0.7948717948717948,
+          "recall@3": 0.7307692307692307,
+          "recall@1": 0.6666666666666666,
+          "MRR": 0.7532051282051282,
+          "spurious_on_unanswerable": 5,
+          "n_unanswerable": 9
+        },
+        "failed_ids": [
+          "HO23",
+          "HO25",
+          "HO28",
+          "HO29",
+          "HO30",
+          "HO31",
+          "HO32",
+          "HO33",
+          "HO34",
+          "HO36"
+        ]
+      },
+      "hybrid_rrf": {
+        "all": {
+          "n": 46,
+          "hit@5": 1.0,
+          "recall@3": 0.967391304347826,
+          "recall@1": 0.7717391304347826,
+          "MRR": 0.907608695652174,
+          "spurious_on_unanswerable": 9,
+          "n_unanswerable": 9
+        },
+        "german_compound": {
+          "n": 7,
+          "hit@5": 1.0,
+          "recall@3": 1.0,
+          "recall@1": 0.8571428571428571,
+          "MRR": 0.9285714285714286,
+          "spurious_on_unanswerable": 0,
+          "n_unanswerable": 0
+        },
+        "non_compound": {
+          "n": 39,
+          "hit@5": 1.0,
+          "recall@3": 0.9615384615384616,
+          "recall@1": 0.7564102564102564,
+          "MRR": 0.9038461538461539,
+          "spurious_on_unanswerable": 9,
+          "n_unanswerable": 9
+        },
+        "failed_ids": []
+      },
+      "vector": {
+        "all": {
+          "n": 46,
+          "hit@5": 1.0,
+          "recall@3": 0.9565217391304348,
+          "recall@1": 0.7717391304347826,
+          "MRR": 0.9003623188405798,
+          "spurious_on_unanswerable": 9,
+          "n_unanswerable": 9
+        },
+        "german_compound": {
+          "n": 7,
+          "hit@5": 1.0,
+          "recall@3": 1.0,
+          "recall@1": 0.8571428571428571,
+          "MRR": 0.9285714285714286,
+          "spurious_on_unanswerable": 0,
+          "n_unanswerable": 0
+        },
+        "non_compound": {
+          "n": 39,
+          "hit@5": 1.0,
+          "recall@3": 0.9487179487179487,
+          "recall@1": 0.7564102564102564,
+          "MRR": 0.8952991452991454,
+          "spurious_on_unanswerable": 9,
+          "n_unanswerable": 9
+        },
+        "failed_ids": []
+      }
+    },
+    "+ stopwords": {
+      "bm25": {
+        "all": {
+          "n": 46,
+          "hit@5": 0.782608695652174,
+          "recall@3": 0.7717391304347826,
+          "recall@1": 0.6521739130434783,
+          "MRR": 0.7355072463768115,
+          "spurious_on_unanswerable": 2,
+          "n_unanswerable": 9
+        },
+        "german_compound": {
+          "n": 7,
+          "hit@5": 0.7142857142857143,
+          "recall@3": 0.7142857142857143,
+          "recall@1": 0.5714285714285714,
+          "MRR": 0.6428571428571429,
+          "spurious_on_unanswerable": 0,
+          "n_unanswerable": 0
+        },
+        "non_compound": {
+          "n": 39,
+          "hit@5": 0.7948717948717948,
+          "recall@3": 0.782051282051282,
+          "recall@1": 0.6666666666666666,
+          "MRR": 0.7521367521367521,
+          "spurious_on_unanswerable": 2,
+          "n_unanswerable": 9
+        },
+        "failed_ids": [
+          "HO23",
+          "HO25",
+          "HO28",
+          "HO29",
+          "HO30",
+          "HO31",
+          "HO32",
+          "HO33",
+          "HO34",
+          "HO36"
+        ]
+      },
+      "hybrid_rrf": {
+        "all": {
+          "n": 46,
+          "hit@5": 1.0,
+          "recall@3": 0.9891304347826086,
+          "recall@1": 0.7717391304347826,
+          "MRR": 0.9094202898550725,
+          "spurious_on_unanswerable": 9,
+          "n_unanswerable": 9
+        },
+        "german_compound": {
+          "n": 7,
+          "hit@5": 1.0,
+          "recall@3": 1.0,
+          "recall@1": 0.8571428571428571,
+          "MRR": 0.9285714285714286,
+          "spurious_on_unanswerable": 0,
+          "n_unanswerable": 0
+        },
+        "non_compound": {
+          "n": 39,
+          "hit@5": 1.0,
+          "recall@3": 0.9871794871794872,
+          "recall@1": 0.7564102564102564,
+          "MRR": 0.9059829059829059,
+          "spurious_on_unanswerable": 9,
+          "n_unanswerable": 9
+        },
+        "failed_ids": []
+      },
+      "vector": {
+        "all": {
+          "n": 46,
+          "hit@5": 1.0,
+          "recall@3": 0.9565217391304348,
+          "recall@1": 0.7717391304347826,
+          "MRR": 0.9003623188405798,
+          "spurious_on_unanswerable": 9,
+          "n_unanswerable": 9
+        },
+        "german_compound": {
+          "n": 7,
+          "hit@5": 1.0,
+          "recall@3": 1.0,
+          "recall@1": 0.8571428571428571,
+          "MRR": 0.9285714285714286,
+          "spurious_on_unanswerable": 0,
+          "n_unanswerable": 0
+        },
+        "non_compound": {
+          "n": 39,
+          "hit@5": 1.0,
+          "recall@3": 0.9487179487179487,
+          "recall@1": 0.7564102564102564,
+          "MRR": 0.8952991452991454,
+          "spurious_on_unanswerable": 9,
+          "n_unanswerable": 9
+        },
+        "failed_ids": []
+      }
+    },
+    "+ stopwords + subwords": {
+      "bm25": {
+        "all": {
+          "n": 46,
+          "hit@5": 0.8043478260869565,
+          "recall@3": 0.7934782608695652,
+          "recall@1": 0.6847826086956522,
+          "MRR": 0.7681159420289854,
+          "spurious_on_unanswerable": 2,
+          "n_unanswerable": 9
+        },
+        "german_compound": {
+          "n": 7,
+          "hit@5": 0.8571428571428571,
+          "recall@3": 0.8571428571428571,
+          "recall@1": 0.8571428571428571,
+          "MRR": 0.8571428571428571,
+          "spurious_on_unanswerable": 0,
+          "n_unanswerable": 0
+        },
+        "non_compound": {
+          "n": 39,
+          "hit@5": 0.7948717948717948,
+          "recall@3": 0.782051282051282,
+          "recall@1": 0.6538461538461539,
+          "MRR": 0.7521367521367521,
+          "spurious_on_unanswerable": 2,
+          "n_unanswerable": 9
+        },
+        "failed_ids": [
+          "HO23",
+          "HO28",
+          "HO29",
+          "HO30",
+          "HO31",
+          "HO32",
+          "HO33",
+          "HO34",
+          "HO36"
+        ]
+      },
+      "hybrid_rrf": {
+        "all": {
+          "n": 46,
+          "hit@5": 1.0,
+          "recall@3": 0.9891304347826086,
+          "recall@1": 0.7717391304347826,
+          "MRR": 0.9094202898550725,
+          "spurious_on_unanswerable": 9,
+          "n_unanswerable": 9
+        },
+        "german_compound": {
+          "n": 7,
+          "hit@5": 1.0,
+          "recall@3": 1.0,
+          "recall@1": 0.8571428571428571,
+          "MRR": 0.9285714285714286,
+          "spurious_on_unanswerable": 0,
+          "n_unanswerable": 0
+        },
+        "non_compound": {
+          "n": 39,
+          "hit@5": 1.0,
+          "recall@3": 0.9871794871794872,
+          "recall@1": 0.7564102564102564,
+          "MRR": 0.9059829059829059,
+          "spurious_on_unanswerable": 9,
+          "n_unanswerable": 9
+        },
+        "failed_ids": []
+      },
+      "vector": {
+        "all": {
+          "n": 46,
+          "hit@5": 1.0,
+          "recall@3": 0.9565217391304348,
+          "recall@1": 0.7717391304347826,
+          "MRR": 0.9003623188405798,
+          "spurious_on_unanswerable": 9,
+          "n_unanswerable": 9
+        },
+        "german_compound": {
+          "n": 7,
+          "hit@5": 1.0,
+          "recall@3": 1.0,
+          "recall@1": 0.8571428571428571,
+          "MRR": 0.9285714285714286,
+          "spurious_on_unanswerable": 0,
+          "n_unanswerable": 0
+        },
+        "non_compound": {
+          "n": 39,
+          "hit@5": 1.0,
+          "recall@3": 0.9487179487179487,
+          "recall@1": 0.7564102564102564,
+          "MRR": 0.8952991452991454,
+          "spurious_on_unanswerable": 9,
+          "n_unanswerable": 9
+        },
+        "failed_ids": []
+      }
+    },
+    "+ subwords only": {
+      "bm25": {
+        "all": {
+          "n": 46,
+          "hit@5": 0.8043478260869565,
+          "recall@3": 0.7717391304347826,
+          "recall@1": 0.6739130434782609,
+          "MRR": 0.7581521739130435,
+          "spurious_on_unanswerable": 5,
+          "n_unanswerable": 9
+        },
+        "german_compound": {
+          "n": 7,
+          "hit@5": 0.8571428571428571,
+          "recall@3": 0.8571428571428571,
+          "recall@1": 0.8571428571428571,
+          "MRR": 0.8571428571428571,
+          "spurious_on_unanswerable": 0,
+          "n_unanswerable": 0
+        },
+        "non_compound": {
+          "n": 39,
+          "hit@5": 0.7948717948717948,
+          "recall@3": 0.7564102564102564,
+          "recall@1": 0.6410256410256411,
+          "MRR": 0.7403846153846154,
+          "spurious_on_unanswerable": 5,
+          "n_unanswerable": 9
+        },
+        "failed_ids": [
+          "HO23",
+          "HO28",
+          "HO29",
+          "HO30",
+          "HO31",
+          "HO32",
+          "HO33",
+          "HO34",
+          "HO36"
+        ]
+      },
+      "hybrid_rrf": {
+        "all": {
+          "n": 46,
+          "hit@5": 1.0,
+          "recall@3": 0.967391304347826,
+          "recall@1": 0.7717391304347826,
+          "MRR": 0.907608695652174,
+          "spurious_on_unanswerable": 9,
+          "n_unanswerable": 9
+        },
+        "german_compound": {
+          "n": 7,
+          "hit@5": 1.0,
+          "recall@3": 1.0,
+          "recall@1": 0.8571428571428571,
+          "MRR": 0.9285714285714286,
+          "spurious_on_unanswerable": 0,
+          "n_unanswerable": 0
+        },
+        "non_compound": {
+          "n": 39,
+          "hit@5": 1.0,
+          "recall@3": 0.9615384615384616,
+          "recall@1": 0.7564102564102564,
+          "MRR": 0.9038461538461539,
+          "spurious_on_unanswerable": 9,
+          "n_unanswerable": 9
+        },
+        "failed_ids": []
+      },
+      "vector": {
+        "all": {
+          "n": 46,
+          "hit@5": 1.0,
+          "recall@3": 0.9565217391304348,
+          "recall@1": 0.7717391304347826,
+          "MRR": 0.9003623188405798,
+          "spurious_on_unanswerable": 9,
+          "n_unanswerable": 9
+        },
+        "german_compound": {
+          "n": 7,
+          "hit@5": 1.0,
+          "recall@3": 1.0,
+          "recall@1": 0.8571428571428571,
+          "MRR": 0.9285714285714286,
+          "spurious_on_unanswerable": 0,
+          "n_unanswerable": 0
+        },
+        "non_compound": {
+          "n": 39,
+          "hit@5": 1.0,
+          "recall@3": 0.9487179487179487,
+          "recall@1": 0.7564102564102564,
+          "MRR": 0.8952991452991454,
+          "spurious_on_unanswerable": 9,
+          "n_unanswerable": 9
+        },
+        "failed_ids": []
+      }
+    }
+  },
+  "reproduction": {
+    "bm25": true,
+    "hybrid_rrf": true,
+    "vector": true
+  },
+  "rrf_sensitivity": {
+    "k=10,depth=5": {
+      "m2": {
+        "hit@5": 0.9591836734693877,
+        "recall@3": 0.9285714285714286
+      },
+      "heldout": {
+        "hit@5": 1.0,
+        "recall@3": 0.967391304347826
+      }
+    },
+    "k=10,depth=20": {
+      "m2": {
+        "hit@5": 0.9591836734693877,
+        "recall@3": 0.9183673469387755
+      },
+      "heldout": {
+        "hit@5": 1.0,
+        "recall@3": 0.967391304347826
+      }
+    },
+    "k=60,depth=5": {
+      "m2": {
+        "hit@5": 0.9591836734693877,
+        "recall@3": 0.9285714285714286
+      },
+      "heldout": {
+        "hit@5": 1.0,
+        "recall@3": 0.967391304347826
+      }
+    },
+    "k=60,depth=20": {
+      "m2": {
+        "hit@5": 0.9591836734693877,
+        "recall@3": 0.8979591836734694
+      },
+      "heldout": {
+        "hit@5": 1.0,
+        "recall@3": 0.967391304347826
+      }
+    },
+    "k=200,depth=5": {
+      "m2": {
+        "hit@5": 0.9591836734693877,
+        "recall@3": 0.9285714285714286
+      },
+      "heldout": {
+        "hit@5": 1.0,
+        "recall@3": 0.967391304347826
+      }
+    },
+    "k=200,depth=20": {
+      "m2": {
+        "hit@5": 0.9591836734693877,
+        "recall@3": 0.8979591836734694
+      },
+      "heldout": {
+        "hit@5": 1.0,
+        "recall@3": 0.967391304347826
+      }
+    }
+  }
+}

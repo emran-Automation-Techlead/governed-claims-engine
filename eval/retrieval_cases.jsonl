@@ -1,0 +1,52 @@
+{"id": "Q01", "category": "exact_id", "lang": "en", "scope": ["synthetic_home_policy.pdf"], "query": "clause 4.3", "relevant": ["4.3"]}
+{"id": "Q02", "category": "exact_id", "lang": "en", "scope": ["synthetic_home_policy.pdf"], "query": "what does 3.2 say", "relevant": ["3.2"]}
+{"id": "Q03", "category": "exact_id", "lang": "en", "scope": ["synthetic_home_policy.pdf"], "query": "5.4", "relevant": ["5.4"]}
+{"id": "Q04", "category": "exact_id", "lang": "en", "scope": ["synthetic_travel_policy.pdf"], "query": "section 2.3", "relevant": ["2.3"]}
+{"id": "Q05", "category": "exact_id", "lang": "fr", "scope": ["synthetic_home_policy_fr.pdf"], "query": "article 3.2", "relevant": ["3.2"]}
+{"id": "Q06", "category": "exact_id", "lang": "de", "scope": ["synthetic_home_policy_de.pdf"], "query": "Ziffer 3.2", "relevant": ["3.2"]}
+{"id": "Q07", "category": "lexical", "lang": "en", "scope": ["synthetic_home_policy.pdf"], "query": "excess amount per claim", "relevant": ["5.3"]}
+{"id": "Q08", "category": "lexical", "lang": "en", "scope": ["synthetic_home_policy.pdf"], "query": "war and terrorism", "relevant": ["4.1"]}
+{"id": "Q09", "category": "lexical", "lang": "en", "scope": ["synthetic_travel_policy.pdf"], "query": "baggage limit single item", "relevant": ["4.1"]}
+{"id": "Q10", "category": "lexical", "lang": "en", "scope": ["synthetic_home_policy.pdf"], "query": "flood extension schedule", "relevant": ["3.3"]}
+{"id": "Q11", "category": "lexical", "lang": "en", "scope": ["synthetic_home_policy.pdf"], "query": "notify within 30 days", "relevant": ["5.1"]}
+{"id": "Q12", "category": "lexical", "lang": "en", "scope": ["synthetic_travel_policy.pdf"], "query": "delay compensation hours departure", "relevant": ["3.2"]}
+{"id": "Q13", "category": "lexical", "lang": "en", "scope": ["synthetic_travel_policy.pdf"], "query": "hazardous activities skydiving extension", "relevant": ["4.3"]}
+{"id": "Q14", "category": "lexical", "lang": "en", "scope": ["synthetic_home_policy.pdf"], "query": "police report theft", "relevant": ["5.2"]}
+{"id": "Q15", "category": "lexical", "lang": "en", "scope": ["synthetic_travel_policy.pdf"], "query": "repatriation cost returning home", "relevant": ["2.2"]}
+{"id": "Q16", "category": "lexical", "lang": "en", "scope": ["synthetic_travel_policy.pdf"], "query": "pre-existing condition declared in writing", "relevant": ["2.3", "1.2"]}
+{"id": "Q17", "category": "paraphrase", "lang": "en", "scope": ["synthetic_home_policy.pdf"], "query": "my kitchen pipe suddenly burst and flooded the floor", "relevant": ["3.1"]}
+{"id": "Q18", "category": "paraphrase", "lang": "en", "scope": ["synthetic_home_policy.pdf"], "query": "slow drip behind the wall over many months", "relevant": ["3.2"]}
+{"id": "Q19", "category": "paraphrase", "lang": "en", "scope": ["synthetic_home_policy.pdf"], "query": "nobody lived in the house for three months and it was burgled", "relevant": ["4.3", "2.3"]}
+{"id": "Q20", "category": "paraphrase", "lang": "en", "scope": ["synthetic_home_policy.pdf"], "query": "I broke the vase on purpose", "relevant": ["4.4"]}
+{"id": "Q21", "category": "paraphrase", "lang": "en", "scope": ["synthetic_home_policy.pdf"], "query": "burglars got in but there is no sign of a break-in", "relevant": ["2.3"]}
+{"id": "Q22", "category": "paraphrase", "lang": "en", "scope": ["synthetic_home_policy.pdf"], "query": "hurricane tore off the roof tiles", "relevant": ["2.2"]}
+{"id": "Q23", "category": "paraphrase", "lang": "en", "scope": ["synthetic_travel_policy.pdf"], "query": "my suitcase was stolen from a bench while I went to the toilet", "relevant": ["4.2", "4.1"]}
+{"id": "Q24", "category": "paraphrase", "lang": "en", "scope": ["synthetic_travel_policy.pdf"], "query": "I was drunk when I got injured", "relevant": ["4.4"]}
+{"id": "Q25", "category": "paraphrase", "lang": "en", "scope": ["synthetic_travel_policy.pdf"], "query": "cancelled my trip because I simply changed my mind", "relevant": ["3.3"]}
+{"id": "Q26", "category": "paraphrase", "lang": "en", "scope": ["synthetic_travel_policy.pdf"], "query": "ski racing as a job", "relevant": ["4.3"]}
+{"id": "Q27", "category": "paraphrase", "lang": "en", "scope": ["synthetic_travel_policy.pdf"], "query": "my flight left 10 hours late, what do I get", "relevant": ["3.2"]}
+{"id": "Q28", "category": "paraphrase", "lang": "en", "scope": ["synthetic_travel_policy.pdf"], "query": "an illness I already had before buying the policy", "relevant": ["2.3", "1.2"]}
+{"id": "Q29", "category": "multilingual", "lang": "fr", "scope": ["synthetic_home_policy_fr.pdf"], "query": "franchise après sinistre", "relevant": ["1.3"]}
+{"id": "Q30", "category": "multilingual", "lang": "fr", "scope": ["synthetic_home_policy_fr.pdf"], "query": "vol sans effraction", "relevant": ["2.3"]}
+{"id": "Q31", "category": "multilingual", "lang": "fr", "scope": ["synthetic_home_policy_fr.pdf"], "query": "dégât des eaux canalisation", "relevant": ["1.2", "2.2"]}
+{"id": "Q32", "category": "multilingual", "lang": "fr", "scope": ["synthetic_home_policy_fr.pdf"], "query": "logement inoccupé 60 jours", "relevant": ["3.2"]}
+{"id": "Q33", "category": "multilingual", "lang": "fr", "scope": ["synthetic_home_policy_fr.pdf"], "query": "usure et humidité progressive", "relevant": ["3.1"]}
+{"id": "Q34", "category": "multilingual", "lang": "fr", "scope": ["synthetic_home_policy_fr.pdf"], "query": "dommages causés volontairement", "relevant": ["3.3"]}
+{"id": "Q35", "category": "multilingual", "lang": "fr", "scope": ["synthetic_home_policy_fr.pdf"], "query": "degat des eaux", "relevant": ["1.2", "2.2"]}
+{"id": "Q36", "category": "multilingual", "lang": "fr", "scope": ["synthetic_home_policy_fr.pdf"], "query": "foudre", "relevant": ["2.1"]}
+{"id": "Q37", "category": "multilingual", "lang": "de", "scope": ["synthetic_home_policy_de.pdf"], "query": "Leitungswasserschaden", "relevant": ["1.2"]}
+{"id": "Q38", "category": "multilingual", "lang": "de", "scope": ["synthetic_home_policy_de.pdf"], "query": "Wasserschaden durch Rohrbruch", "relevant": ["2.2"]}
+{"id": "Q39", "category": "multilingual", "lang": "de", "scope": ["synthetic_home_policy_de.pdf"], "query": "Leerstand mehr als 60 Tage", "relevant": ["3.2"]}
+{"id": "Q40", "category": "multilingual", "lang": "de", "scope": ["synthetic_home_policy_de.pdf"], "query": "Schimmel Rost", "relevant": ["3.1"]}
+{"id": "Q41", "category": "multilingual", "lang": "de", "scope": ["synthetic_home_policy_de.pdf"], "query": "Verschleiss", "relevant": ["3.1"]}
+{"id": "Q42", "category": "multilingual", "lang": "de", "scope": ["synthetic_home_policy_de.pdf"], "query": "Schäden absichtlich verursacht", "relevant": ["3.3"]}
+{"id": "Q43", "category": "multilingual", "lang": "de", "scope": ["synthetic_home_policy_de.pdf"], "query": "Selbstbehalt", "relevant": ["1.3"]}
+{"id": "Q44", "category": "multilingual", "lang": "de", "scope": ["synthetic_home_policy_de.pdf"], "query": "Einbruchspuren", "relevant": ["2.3"]}
+{"id": "Q45", "category": "cross_lingual", "lang": "en", "scope": ["synthetic_home_policy_fr.pdf"], "query": "pipe burst water damage", "relevant": ["1.2", "2.2"]}
+{"id": "Q46", "category": "cross_lingual", "lang": "en", "scope": ["synthetic_home_policy_de.pdf"], "query": "empty house more than 60 days theft", "relevant": ["3.2"]}
+{"id": "Q47", "category": "cross_lingual", "lang": "en", "scope": ["synthetic_home_policy_fr.pdf"], "query": "deductible", "relevant": ["1.3"]}
+{"id": "Q48", "category": "cross_lingual", "lang": "en", "scope": ["synthetic_home_policy_de.pdf"], "query": "intentional damage", "relevant": ["3.3"]}
+{"id": "Q49", "category": "cross_lingual", "lang": "en", "scope": ["synthetic_home_policy_de.pdf"], "query": "lightning fire", "relevant": ["2.1"]}
+{"id": "Q50", "category": "unanswerable", "lang": "en", "scope": ["synthetic_home_policy.pdf"], "query": "earthquake coverage in Japan", "relevant": []}
+{"id": "Q51", "category": "unanswerable", "lang": "en", "scope": ["synthetic_travel_policy.pdf"], "query": "pet insurance dog bite", "relevant": []}
+{"id": "Q52", "category": "unanswerable", "lang": "en", "scope": ["synthetic_home_policy.pdf"], "query": "cyber attack ransomware", "relevant": []}

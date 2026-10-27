@@ -1,0 +1,32 @@
+[project]
+name = "governed-claims-engine"
+version = "0.1.0"
+description = "Governed claims coverage decision-support prototype (synthetic data only)"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+markers = ["semantic: needs the optional embedding package AND the locally fetched pinned model"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+extend-select = ["S"]  # flake8-bandit rules: the project's static security scan
+# purely stylistic rules enabled by ruff defaults that add noise without catching bugs here
+ignore = ["ISC004", "RUF059", "RUF007", "RUF015", "PLW1510"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["C408", "S"]  # dict(...) keyword style is clearer in test fixtures
+"src/claims_engine/app.py" = ["SIM117"]  # Gradio layout is expressed by nested `with` blocks
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true  # PyMuPDF/reportlab ship no stubs; sentence-transformers is optional
+strict_optional = true
+[[tool.mypy.overrides]]
+# heavy third-party packages: do not analyse their internals (it takes minutes and checks nothing of ours)
+module = ["torch.*", "transformers.*", "sentence_transformers.*", "langgraph.*", "langchain_core.*", "langsmith.*"]
+follow_imports = "skip"

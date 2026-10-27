@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:05,000
+[DRAFT - INCOMPLETE. Covers only the opening lines of an older script version.]
+
+2
+00:00:05,000 --> 00:00:11,000
+[Timings are estimates, not synced to any audio. Do not publish.]
+
+3
+00:00:11,000 --> 00:00:17,500
+This is the Governed Claims Coverage Engine: a prototype that helps a human reviewer
+
+4
+00:00:17,500 --> 00:00:23,000
+check what an insurance policy says about a question.
+
+5
+00:00:23,000 --> 00:00:28,000
+It is a decision-support tool, not a decision-maker.
