@@ -1100,8 +1100,9 @@ requests-toolbelt==1.0.0 \
     --hash=sha256:cccfdd665f0a24fcf4726e690f65639d272bb0637b9b92dfd91a5568ccf6bd06
 rich==15.0.0 \
     --hash=sha256:33bd4ef74232fb73fe9279a257718407f169c09b78a87ad3d296f548e27de0bb
-safehttpx==0.1.7 \
-    --hash=sha256:c4f4a162db6993464d7ca3d7cc4af0ffc6515a606dfd220b9f82c6945d869cde
+safehttpx==0.2.0 \
+    --hash=sha256:bd698a5a1730777040ccfdac0aef7a7bdb10f59931796c4c99c003dc90dff281 \
+    --hash=sha256:ffb8a246ea541abd79febba40591e3fc380380636f75376c0dff0aed6e3d7e29
 semantic-version==2.10.0 \
     --hash=sha256:de78a3b8e0feda74cabc54aab2da702113e33ac9d9eb9d2389bcf1f58b7d9177
 shellingham==1.5.4 \
