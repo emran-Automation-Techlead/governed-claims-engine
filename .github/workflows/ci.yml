@@ -1,0 +1,102 @@
+# CI for the Governed Claims Coverage Engine (synthetic, offline demo). Intended to live at the ROOT of its own repository.
+# Written 2026-10-27; NOT YET RUN on GitHub (the equivalent commands were run locally: see PROJECT_STATUS.md).
+# Third-party actions are the official GitHub ones, pinned to immutable commit SHAs (tag in the comment).
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: lint, types, tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0  # v7.1.0
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: |
+            requirements-dev.txt
+            requirements-demo.txt
+      - name: "Install (no model, no embedding packages - lexical-only suite)"
+        run: python -m pip install -r requirements-dev.txt -r requirements-demo.txt
+      - name: Dependency consistency
+        run: python -m pip check
+      - name: Ruff
+        run: ruff check .
+      - name: Ruff security rules (bandit-equivalent, src only)
+        run: ruff check --select S src scripts
+      - name: Mypy
+        run: mypy src
+      - name: Pillow advisory review document matches its data snapshot
+        run: python scripts/pillow_advisory_review.py --check
+      - name: Tests (3 real-model tests skip without the optional model)
+        run: python -m pytest -q -W ignore
+
+  dependency-audit:
+    name: known-vulnerability audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0  # v7.1.0
+        with:
+          python-version: "3.11"
+      - name: pip-audit (tool used only here; not a project dependency)
+        run: |
+          python -m pip install "pip-audit==2.9.0"
+          pip-audit --disable-pip --no-deps -r requirements-container.txt --progress-spinner off -f json -o audit.json || true
+      - name: Fail on any advisory that is not individually reviewed (time-boxed allowlist)
+        run: python scripts/check_audit_allowlist.py audit.json governance/accepted_advisories.json
+
+  container:
+    name: docker build + smoke test
+    needs: quality
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Build (default lexical-only target; no model is downloaded)
+        run: docker build --target runtime -t claims-demo:ci .
+      - name: Image is non-root and contains no model
+        run: |
+          test "$(docker image inspect claims-demo:ci --format '{{.Config.User}}')" = "10001:10001"
+          docker run --rm --entrypoint sh claims-demo:ci -c 'test ! -e /app/models && test ! -e /app/.env && id -u'
+      - name: Run hardened and wait for health
+        run: |
+          docker run -d --name demo -p 127.0.0.1:7860:7860 --read-only --tmpfs /tmp:size=64m \
+            --cap-drop ALL --security-opt no-new-privileges:true --pids-limit 256 claims-demo:ci
+          for i in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:7860/healthz >/dev/null 2>&1; then echo "healthy after ${i}s"; break; fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:7860/healthz
+      - name: Smoke checks (page, security headers, no third-party hosts)
+        run: |
+          curl -fsS http://127.0.0.1:7860/ | grep -q "Governed Claims Coverage Engine"
+          curl -fsSI http://127.0.0.1:7860/ | grep -i "^content-security-policy:" | grep -q "frame-ancestors 'none'"
+          ! curl -fsS http://127.0.0.1:7860/ | grep -Eq 'src="https?://|href="https?://(fonts|cdnjs)'
+      - name: Logs on failure
+        if: failure()
+        run: docker logs demo || true
+      - name: Cleanup
+        if: always()
+        run: docker rm -f demo || true

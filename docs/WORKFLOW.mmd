@@ -1,0 +1,42 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	validate_input(validate_input)
+	screen_query(screen_query)
+	retrieve(retrieve)
+	enforce_scope(enforce_scope)
+	screen_evidence(screen_evidence)
+	score_evidence(score_evidence)
+	assess(assess)
+	validate_citations(validate_citations)
+	abstain(abstain)
+	reject(reject)
+	human_review_gate(human_review_gate)
+	audit(audit)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> validate_input;
+	abstain --> human_review_gate;
+	assess --> validate_citations;
+	enforce_scope -.-> abstain;
+	enforce_scope -.-> screen_evidence;
+	human_review_gate --> audit;
+	reject --> audit;
+	retrieve --> enforce_scope;
+	score_evidence -.-> abstain;
+	score_evidence -.-> assess;
+	screen_evidence --> score_evidence;
+	screen_query -.-> abstain;
+	screen_query -.-> retrieve;
+	validate_citations -.-> abstain;
+	validate_citations -.-> assess;
+	validate_citations -.-> human_review_gate;
+	validate_input -.-> reject;
+	validate_input -.-> screen_query;
+	audit --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

@@ -1,0 +1,5 @@
+eval/baseline_m2/* -text
+eval/*.jsonl -text
+eval/*.json -text
+calibration/* -text
+*.pdf binary

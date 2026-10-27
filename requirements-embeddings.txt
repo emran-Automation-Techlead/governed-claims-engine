@@ -1,0 +1,9 @@
+# OPTIONAL semantic retrieval. Install ONLY inside the project venv (.venv), never the shared env.
+# Resolved and pinned 2026-10-27 via `pip install --dry-run` inside the venv (no conflicts).
+-r requirements.txt
+sentence-transformers==6.2.0
+torch==2.14.1
+transformers==5.21.0
+huggingface_hub==2.3.0
+tokenizers==0.23.3
+safetensors==0.8.0

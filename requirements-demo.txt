@@ -1,0 +1,5 @@
+# Demo UI. Install in the PROJECT VENV only; never in the shared Anaconda environment.
+# gradio 6.30.0 (2026-10-08): fixes the three advisories reported against 6.10.0 and requires starlette>=1.0.1 (fixes five more).
+# Its own metadata still caps pillow<13, so Pillow advisories remain (documented as an accepted risk; the demo handles no images).
+-r requirements.txt
+gradio==6.30.0
