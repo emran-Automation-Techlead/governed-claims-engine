@@ -5,6 +5,7 @@
 - **Live demo (synthetic data, no sign-in needed):** https://huggingface.co/spaces/EmranAIShaper/governed-claims-coverage-engine
 - Direct app URL: https://emranaishaper-governed-claims-coverage-engine.hf.space
 - Security and governance documents: https://huggingface.co/datasets/EmranAIShaper/governed-claims-security-docs
+- Video walkthrough (6 min): https://youtu.be/8l1NU6hqR10
 
 An evidence-grounded decision-support prototype that helps a human reviewer check what an insurance policy says about a question: hybrid retrieval, a deterministic rule engine (not an LLM), validated citations, abstention when evidence is thin, human review with an audit trail, and a LangGraph workflow. It runs on synthetic policies only.
 
