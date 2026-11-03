@@ -46,7 +46,7 @@ mypy_extensions==1.1.0
 narwhals==2.27.1
 networkx==3.6.1
 numpy==2.4.6
-opentelemetry-api==1.45.1
+opentelemetry-api==1.45.2
 orjson==3.13.0
 ormsgpack==1.13.0
 packaging==26.3
