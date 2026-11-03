@@ -381,8 +381,9 @@ jsonpatch==1.38 \
     --hash=sha256:46260c5df952abd4734a098f94512dc00bc38539152ac3ef069ed0475e4f5695
 jsonpointer==3.6 \
     --hash=sha256:a45c858f8a9e171f6b3790ed9446c9382782f6c4cb4589176813c5a553f4cfcd
-langchain-core==1.7.0 \
-    --hash=sha256:e82b24d7ac51fc74874baa29d6b3c0b8234880d4f3d897f8ff57fb80dfd9b07d
+langchain-core==1.7.3 \
+    --hash=sha256:460c214bf31495d7b7e0a879e408dbfda677fd53fd879da786c1b966a4f6bff6 \
+    --hash=sha256:77f70b81e238c981bfd8405840b03fdf143735ac93c0729c2bdb39d6f0648024
 langchain-protocol==0.0.20 \
     --hash=sha256:3c935e5e46b0f6f9cb52f45ba7cfa53d1b9fa80c82c4a277d47f03e07f7385b1
 langgraph==1.2.10 \
